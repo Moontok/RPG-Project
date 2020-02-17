@@ -26,6 +26,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9101322494e68164895dd2f03b9acd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6955386226840226011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162403360013181164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843d7fa7a92c7d046acaa47fe52c320f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
+  suspicionTime: 5
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 3
 --- !u!1001 &2039851419002096717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,6 +50,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3291933869480646614, guid: 2bff11d9dfc3685418e51babedca5971,
+        type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3805565677562508859, guid: 2bff11d9dfc3685418e51babedca5971,
         type: 3}
       propertyPath: health
@@ -41,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 3805565677562508859, guid: 2bff11d9dfc3685418e51babedca5971,
         type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5764548047173272835, guid: 2bff11d9dfc3685418e51babedca5971,
         type: 3}
@@ -97,6 +119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559691094548668725, guid: 2bff11d9dfc3685418e51babedca5971,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9163406763042811041, guid: 2bff11d9dfc3685418e51babedca5971,
         type: 3}
