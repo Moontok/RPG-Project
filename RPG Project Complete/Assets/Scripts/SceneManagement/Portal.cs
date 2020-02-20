@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
+using RPG.Saving;
 
 namespace RPG.SceneManagement
 {
@@ -15,7 +16,7 @@ namespace RPG.SceneManagement
 
         [SerializeField] int sceneToLoad = -1;
         [SerializeField] Transform spawnPoint = null;
-        [SerializeField] DestinationIdentifier destination;
+        [SerializeField] DestinationIdentifier destination = new DestinationIdentifier();
         [SerializeField] float fadeOutTime = 1f;
         [SerializeField] float fadeInTime = 1f;
         [SerializeField] float fadeWaitTime = 2f;
@@ -40,14 +41,20 @@ namespace RPG.SceneManagement
             DontDestroyOnLoad(this.gameObject);
 
             Fader fader = FindObjectOfType<Fader>();
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
 
             yield return fader.FadeOut(fadeOutTime);
+
+            savingWrapper.Save();
+
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
+
+            savingWrapper.Load();
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
 
-            yield return new WaitForSeconds(fadeOutTime);
+            yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
 
             Destroy(this.gameObject);

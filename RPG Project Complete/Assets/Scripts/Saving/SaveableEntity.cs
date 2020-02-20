@@ -1,4 +1,7 @@
+using RPG.Core;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Saving
 {
@@ -14,19 +17,30 @@ namespace RPG.Saving
 
         public object CaptureState()
         {
-            print("Capturing state for " + GetUniqueIdentifier());
-            return null;
+            return new SerializableVector3(transform.position);
         }
 
         public void RestoreState(object state)
         {
-            print("Restoring state for " + GetUniqueIdentifier());
+            SerializableVector3 position = (SerializableVector3)state;            
+            this.GetComponent<NavMeshAgent>().Warp(position.ToVector());
+            this.GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
         private void Update() 
         {
             if(Application.IsPlaying(this.gameObject)) return;
-            print("Editing");
+            
+            if(string.IsNullOrEmpty(gameObject.scene.path)) return;
+
+            SerializedObject serializedObject = new SerializedObject(this);
+            SerializedProperty property = serializedObject.FindProperty("uniqueIdentifier");
+            
+            if (string.IsNullOrEmpty(property.stringValue))
+            {
+                property.stringValue = System.Guid.NewGuid().ToString();
+                serializedObject.ApplyModifiedProperties();
+            }
         }
     }
 }
