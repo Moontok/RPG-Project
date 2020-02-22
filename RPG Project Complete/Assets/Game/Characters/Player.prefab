@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82039f6fedf7d944af92e4efdfc6534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2062222399387604549
+--- !u!1001 &7333493236798298699
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -81,12 +81,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 13707166, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3f6fc0cf5e5d31c458bc74ede87cb8ae, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9505156, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+--- !u!4 &7333493236797838287 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 461188, guid: 679ff741e12a7e740819ede24a7000b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7333493236798298699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7635778858232819013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164,6 +167,23 @@ PrefabInstance:
       propertyPath: weaponDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8559691094548668725, guid: 2bff11d9dfc3685418e51babedca5971,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 7333493236797838287}
+    - target: {fileID: 8559691094548668725, guid: 2bff11d9dfc3685418e51babedca5971,
+        type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 1479634328525184765, guid: d6e7aa3cfbf4c50489bacd7361b57800,
+        type: 3}
+    - target: {fileID: 8559691094548668725, guid: 2bff11d9dfc3685418e51babedca5971,
+        type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 36e46a4fa1d09334282c86a40e9055fb,
+        type: 2}
     - target: {fileID: 9163406763042811041, guid: 2bff11d9dfc3685418e51babedca5971,
         type: 3}
       propertyPath: m_Name
