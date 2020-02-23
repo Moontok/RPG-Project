@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e700ccb2e6993e94d8aa2df99cad5780, type: 3}
-  m_Name: Bow
+  m_Name: Bow White Shot
   m_EditorClassIdentifier: 
   animatorOverride: {fileID: 22100000, guid: 7a86201573c585c45a25af48a5109443, type: 2}
   equippedPrefab: {fileID: 5877810571329393529, guid: 31038541578fe90449d7bb3661989c9b,
