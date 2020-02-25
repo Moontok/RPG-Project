@@ -10,6 +10,9 @@ namespace RPG.Combat
         [SerializeField] float bonusDamage = 0f;
         [SerializeField] bool isHoming = false;
         [SerializeField] GameObject hitEffect = null;
+        [SerializeField] float maxLifeTime = 10f;
+        [SerializeField] GameObject[] destroyOnHit = null;
+        [SerializeField] float lifeAfterImpact = .2f;
 
         float damage = 0f;
         Health target = null;
@@ -30,6 +33,8 @@ namespace RPG.Combat
         {
             this.target = target;
             this.damage = damage + bonusDamage;
+
+            Destroy(this.gameObject, maxLifeTime);
         }
 
         private Vector3 GetAimLocation()
@@ -39,15 +44,26 @@ namespace RPG.Combat
             return target.transform.position + Vector3.up * targetCapsule.height / 2;
         }
 
-        private void OnTriggerEnter(Collider other) 
+        private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Health>() != target) return;
             if (target.IsDead()) return;
             target.TakeDamage(damage);
+            ProjectileImpact();
+        }
+
+        private void ProjectileImpact()
+        {
+            speed = 0f;
 
             if (hitEffect != null) Instantiate(hitEffect, GetAimLocation(), this.transform.rotation);
 
-            Destroy(this.gameObject);
+            foreach (GameObject toDestroy in destroyOnHit)
+            {
+                Destroy(toDestroy);
+            }
+
+            Destroy(this.gameObject, lifeAfterImpact);
         }
     }
 }

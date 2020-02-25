@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG.Core
 {
@@ -10,7 +8,7 @@ namespace RPG.Core
         {
             if (!this.GetComponent<ParticleSystem>().IsAlive())
             {
-                
+                Destroy(this.gameObject);
             }
         }
     }
