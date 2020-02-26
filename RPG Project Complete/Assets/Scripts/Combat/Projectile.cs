@@ -1,5 +1,4 @@
-﻿using System;
-using RPG.Core;
+﻿using RPG.Resources;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -14,8 +13,9 @@ namespace RPG.Combat
         [SerializeField] GameObject[] destroyOnHit = null;
         [SerializeField] float lifeAfterImpact = .2f;
 
-        float damage = 0f;
         Health target = null;
+        GameObject instigator = null;
+        float damage = 0f;
 
         private void Start() 
         {
@@ -29,10 +29,11 @@ namespace RPG.Combat
             this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
-        public void SetTarget(Health target, float damage)
+        public void SetTarget(Health target, GameObject instigator, float damage)
         {
             this.target = target;
             this.damage = damage + bonusDamage;
+            this.instigator = instigator;
 
             Destroy(this.gameObject, maxLifeTime);
         }
@@ -48,7 +49,7 @@ namespace RPG.Combat
         {
             if (other.GetComponent<Health>() != target) return;
             if (target.IsDead()) return;
-            target.TakeDamage(damage);
+            target.TakeDamage(instigator, damage);
             ProjectileImpact();
         }
 
