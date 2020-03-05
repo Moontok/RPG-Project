@@ -17,7 +17,7 @@ namespace RPG.Combat
         {
 
             Health targetHealth = fighter.GetTarget();
-            if (targetHealth != null) this.GetComponent<Text>().text = $"{targetHealth.GetPercentage():0}%";
+            if (targetHealth != null) this.GetComponent<Text>().text = $"{targetHealth.GetHealthPoints():0}/{targetHealth.GetMaxHealthPoints():0}";
             else this.GetComponent<Text>().text = "No Target";
         }
     }
