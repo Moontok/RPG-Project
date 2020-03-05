@@ -74,13 +74,14 @@ namespace RPG.Combat
         {
             if (target == null) return;
 
+            float damage = this.GetComponent<BaseStats>().GetStat(Stats.Damage));
             if (currentWeapon.HasProjectile())
             {
                 currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, this.gameObject);                
             }
             else
             {
-                target.TakeDamage(this.gameObject, this.GetComponent<BaseStats>().GetStat(Stats.Damage));
+                target.TakeDamage(this.gameObject, damage;
             }
         }
         // Animation Event on Bow
