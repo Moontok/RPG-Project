@@ -3,6 +3,7 @@ using RPG.Movement;
 using RPG.Core;
 using RPG.Saving;
 using RPG.Resources;
+using RPG.Stats;
 
 namespace RPG.Combat
 {
@@ -79,7 +80,7 @@ namespace RPG.Combat
             }
             else
             {
-                target.TakeDamage(this.gameObject, currentWeapon.GetDamage());
+                target.TakeDamage(this.gameObject, this.GetComponent<BaseStats>().GetStat(Stats.Damage));
             }
         }
         // Animation Event on Bow

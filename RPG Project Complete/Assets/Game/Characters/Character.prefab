@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2605420e6da330841aca6af1af93e71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 100
+  regenPercentage: 100
 --- !u!114 &1096223440663179393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +177,4 @@ MonoBehaviour:
   startingLevel: 1
   characterClass: 0
   progression: {fileID: 11400000, guid: 9ae3ce5cb3f97764a8280af3fb2f3cab, type: 2}
+  levelUpParticalEffect: {fileID: 0}
