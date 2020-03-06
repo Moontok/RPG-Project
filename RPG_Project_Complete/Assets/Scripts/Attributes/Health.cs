@@ -4,12 +4,19 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace RPG.Resources
+namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] float regenPercentage = 100f;
+        [SerializeField] TakeDamageEvent takeDamage = null;
+
+        [System.Serializable]
+        public class TakeDamageEvent : UnityEvent<float>
+        {            
+        }
 
         LazyValue<float> healthPoints = null;
 
@@ -47,13 +54,16 @@ namespace RPG.Resources
 
         public void TakeDamage(GameObject instigator, float damage)
         {
-            print(this.gameObject.name + " took damage: " + damage);
-
             healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
+
             if (healthPoints.value == 0)
             {
                 Die();
                 AwardExperience(instigator);
+            }
+            else
+            {                            
+                takeDamage.Invoke(damage);
             }
         }
 
@@ -69,7 +79,12 @@ namespace RPG.Resources
 
         public float GetPercentage()
         {
-            return 100 * (healthPoints.value / this.GetComponent<BaseStats>().GetStat(Stat.Health));
+            return 100 * (GetFraction());
+        }
+
+        public float GetFraction()
+        {
+            return healthPoints.value / this.GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         private void Die()
