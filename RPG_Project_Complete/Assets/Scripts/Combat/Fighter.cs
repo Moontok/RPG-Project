@@ -14,27 +14,29 @@ namespace RPG.Combat
     {
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
-        [SerializeField] Weapon defaultWeapon = null;
+        [SerializeField] WeaponConfig defaultWeapon = null;
 
         Health target = null;
         float timeSinceLastAttack = Mathf.Infinity;
 
+        WeaponConfig currentWeaponConfig = null;
         LazyValue<Weapon> _currentWeapon = null;
         public Weapon currentWeapon
         {
             get {return _currentWeapon.value;}
             set {_currentWeapon.value = value;}
         }
+        
 
         private void Awake() 
         {
+            currentWeaponConfig = defaultWeapon;
             _currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
         }
 
         private Weapon SetupDefaultWeapon()
-        {
-            AttachWeapon(defaultWeapon);
-            return defaultWeapon;
+        {            
+            return AttachWeapon(defaultWeapon);
         }
 
         private void Start() 
@@ -60,16 +62,16 @@ namespace RPG.Combat
             }
         }
 
-        public void EquipWeapon(Weapon weapon)
+        public void EquipWeapon(WeaponConfig weapon)
         {
-            currentWeapon = weapon;
-            AttachWeapon(weapon);
+            currentWeaponConfig = weapon;
+            currentWeapon = AttachWeapon(weapon);
         }
 
-        private void AttachWeapon(Weapon weapon)
+        private Weapon AttachWeapon(WeaponConfig weapon)
         {
             Animator animator = this.GetComponent<Animator>();
-            weapon.Spawn(rightHandTransform, leftHandTransform, animator);
+            return weapon.Spawn(rightHandTransform, leftHandTransform, animator);
         }
 
         public Health GetTarget()
@@ -80,7 +82,7 @@ namespace RPG.Combat
         private void AttackBehavior()
         {
             this.transform.LookAt(target.transform);
-            if (timeSinceLastAttack > currentWeapon.GetAttackSpeed())
+            if (timeSinceLastAttack > currentWeaponConfig.GetAttackSpeed())
             {
                 // This will trigger the Hit() event.
                 TriggerAttack();
@@ -100,9 +102,12 @@ namespace RPG.Combat
             if (target == null) return;
 
             float damage = this.GetComponent<BaseStats>().GetStat(Stat.Damage);
-            if (currentWeapon.HasProjectile())
+
+            if (currentWeapon != null) currentWeapon.OnHit();
+
+            if (currentWeaponConfig.HasProjectile())
             {
-                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, this.gameObject, damage);                
+                currentWeaponConfig.LaunchProjectile(rightHandTransform, leftHandTransform, target, this.gameObject, damage);                
             }
             else
             {
@@ -117,7 +122,7 @@ namespace RPG.Combat
 
         private bool GetIsInRange()
         {
-            return Vector3.Distance(this.transform.position, target.transform.position) < currentWeapon.GetRange();
+            return Vector3.Distance(this.transform.position, target.transform.position) < currentWeaponConfig.GetRange();
         }
 
         public bool CanAttack(GameObject combatTarget)
@@ -152,7 +157,7 @@ namespace RPG.Combat
         {
             if (stat == Stat.Damage)
             {
-                yield return currentWeapon.GetDamage();
+                yield return currentWeaponConfig.GetDamage();
             }
         }
 
@@ -160,19 +165,19 @@ namespace RPG.Combat
         {
             if (stat == Stat.Damage)
             {
-                yield return currentWeapon.GetPercentageDamageBonus();
+                yield return currentWeaponConfig.GetPercentageDamageBonus();
             }
         }
 
         public object CaptureState()
         {
-            return currentWeapon.name;
+            return currentWeaponConfig.name;
         }
 
         public void RestoreState(object state)
         {
             string weaponName = (string)state;
-            Weapon weapon = UnityEngine.Resources.Load<Weapon>(weaponName);
+            WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
             EquipWeapon(weapon);
         }
     }
