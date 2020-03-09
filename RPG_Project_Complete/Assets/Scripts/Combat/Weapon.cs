@@ -1,15 +1,92 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using RPG.Attributes;
+using UnityEngine;
 
 namespace RPG.Combat
 {
-    public class Weapon : MonoBehaviour
+    [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make NewWeapon", order = 0)]
+    public class Weapon : ScriptableObject
     {
-        [SerializeField] UnityEvent onHit = null;
+        [SerializeField] AnimatorOverrideController animatorOverride = null;
+        [SerializeField] GameObject equippedPrefab = null;
+        [SerializeField] float weaponDamage = 5f;
+        [SerializeField] float percentageDamageBonus = 0f;
+        [SerializeField] float weaponRange = 2f;
+        [SerializeField] float weapopnAttackSpeed = 1f;
+        [SerializeField] bool isRightHanded = true;
+        [SerializeField] Projectile projectile = null;
 
-        public void OnHit()
+        const string weaponName = "Weapon";
+
+        public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
-            onHit.Invoke();
+            DestroyOldWeapon(rightHand, leftHand);
+
+            if (equippedPrefab != null)
+            {
+                Transform handTransform = GetTransform(rightHand, leftHand);
+                GameObject weapon = Instantiate(equippedPrefab, handTransform);
+                weapon.name = weaponName;
+            }
+
+            AnimatorOverrideController overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
+
+            if (animatorOverride != null)
+            {
+                animator.runtimeAnimatorController = animatorOverride;
+            }
+            else if (overrideController != null)
+            {
+                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;            
+            }
+        }
+
+        private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
+        {
+            Transform oldWeapon = rightHand.Find(weaponName);
+            if (oldWeapon == null) oldWeapon = leftHand.Find(weaponName);
+            if (oldWeapon == null ) return;
+
+            oldWeapon.name = "DESTROYING";
+            Destroy(oldWeapon.gameObject);
+        }
+
+        private Transform GetTransform(Transform rightHand, Transform leftHand)
+        {
+            Transform handTransform = null;
+            if (isRightHanded) handTransform = rightHand;
+            else handTransform = leftHand;
+            return handTransform;
+        }
+
+        public bool HasProjectile()
+        {
+            return projectile != null;
+        }
+
+        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator, float calculatedDamage)
+        {
+            Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
+            projectileInstance.SetTarget(target, instigator, calculatedDamage);
+        }
+
+        public float GetDamage()
+        {
+            return weaponDamage;
+        }
+
+        public float GetPercentageDamageBonus()
+        {
+            return percentageDamageBonus;
+        }
+
+        public float GetRange()
+        {
+            return weaponRange;
+        }
+
+        public float GetAttackSpeed()
+        {
+            return weapopnAttackSpeed;
         }
     }
 }
