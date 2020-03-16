@@ -38,9 +38,9 @@ namespace RPG.Movement
         {
             NavMeshPath path = new NavMeshPath();
             bool hasPath = NavMesh.CalculatePath(this.transform.position, destination, NavMesh.AllAreas, path);
-            if (!hasPath) return false;
-            if (path.status != NavMeshPathStatus.PathComplete) return false;
-            if (GetPathLength(path) > maxNavPathLength) return false;
+            if (!hasPath) { return false; }
+            if (path.status != NavMeshPathStatus.PathComplete) { return false; }
+            if (GetPathLength(path) > maxNavPathLength) { return false; }
 
             return true;
         }
@@ -69,7 +69,7 @@ namespace RPG.Movement
         private float GetPathLength(NavMeshPath path)
         {
             float total = 0f;
-            if (path.corners.Length < 2) return total;
+            if (path.corners.Length < 2) { return total; }
             for (int i = 0; i < path.corners.Length - 1; i++)
             {
                 total += Vector3.Distance(path.corners[i], path.corners[i + 1]);

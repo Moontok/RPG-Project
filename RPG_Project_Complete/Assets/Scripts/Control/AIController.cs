@@ -58,7 +58,7 @@ namespace RPG.Control
 
         private void Update()
         {
-            if (health.IsDead()) return;
+            if (health.IsDead()) { return; }
 
             if (IsAggravated() && fighter.CanAttack(player))
             {
@@ -80,6 +80,10 @@ namespace RPG.Control
         {
             timeSinceAggravated = 0;
         }
+        // public void ResetAggravate()
+        // {
+        //     timeSinceAggravated = Mathf.Infinity;
+        // }
 
         private void UpdateTimers()
         {

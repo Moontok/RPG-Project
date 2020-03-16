@@ -6,6 +6,9 @@ namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
     {
+        [SerializeField] KeyCode saveKey = KeyCode.F5;
+        [SerializeField] KeyCode loadKey = KeyCode.F9;
+        [SerializeField] KeyCode deleteKey = KeyCode.Delete;
         const string defaultSaveFile = "save";
 
         [SerializeField] float fadeInTime = 0.2f;
@@ -18,24 +21,24 @@ namespace RPG.SceneManagement
 
         private IEnumerator LoadLastScene()
         {
-            yield return this.GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
-            Fader fader = FindObjectOfType<Fader>();            
+            Fader fader = FindObjectOfType<Fader>();
             fader.FadeOutImmediate();
+            yield return this.GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
         }
 
         private void Update() 
         {
-            if (Input.GetKeyDown(KeyCode.F5))
+            if (Input.GetKeyDown(saveKey))
             {
                 Save();
             }
-            if (Input.GetKeyDown(KeyCode.F9))
+            if (Input.GetKeyDown(loadKey))
             {
-                Load();
+                ManualLoad();
             }
-            if (Input.GetKeyDown(KeyCode.Delete))
+            if (Input.GetKeyDown(deleteKey))
             {
                 Delete();
             }
@@ -44,6 +47,11 @@ namespace RPG.SceneManagement
         public void Load()
         {
             this.GetComponent<SavingSystem>().Load(defaultSaveFile);
+        }
+
+        public void ManualLoad()
+        {
+            StartCoroutine(LoadLastScene());
         }
 
         public void Save()

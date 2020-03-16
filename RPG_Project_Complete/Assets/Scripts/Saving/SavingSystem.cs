@@ -17,7 +17,7 @@ namespace RPG.Saving
             if(state.ContainsKey("lastSceneBuildIndex"))
             {
                 buildIndex = (int)state["lastSceneBuildIndex"];
-            }
+            }            
             yield return SceneManager.LoadSceneAsync(buildIndex);
             RestoreState(state);
         }
@@ -29,15 +29,14 @@ namespace RPG.Saving
             SaveFile(saveFile, state);
         }
 
-        public void Load(string saveFile)
-        {
-            print("Loading");
-            RestoreState(LoadFile(saveFile));
-        }
-
         public void Delete(string saveFile)  
         {
             File.Delete(GetPathFromSaveFile(saveFile));
+        }
+
+        public void Load(string saveFile)
+        {
+            RestoreState(LoadFile(saveFile));
         }
 
         private Dictionary<string, object> LoadFile(string saveFile)
