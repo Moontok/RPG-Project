@@ -47,12 +47,13 @@ namespace RPG.SceneManagement
             yield return fader.FadeOut(fadeOutTime);
 
             savingWrapper.Save();
+
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
             PlayerController newPlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
             newPlayerController.enabled = false;
 
 
-            savingWrapper.Load();
+            savingWrapper.RestorePlayerAfterSceneChange();
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);

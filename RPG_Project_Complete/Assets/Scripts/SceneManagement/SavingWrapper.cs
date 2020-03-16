@@ -44,7 +44,7 @@ namespace RPG.SceneManagement
             }
         }
 
-        public void Load()
+        public void RestorePlayerAfterSceneChange()
         {
             this.GetComponent<SavingSystem>().Load(defaultSaveFile);
         }
