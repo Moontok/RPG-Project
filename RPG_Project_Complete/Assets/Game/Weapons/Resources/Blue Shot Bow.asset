@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e700ccb2e6993e94d8aa2df99cad5780, type: 3}
   m_Name: Blue Shot Bow
   m_EditorClassIdentifier: 
+  itemID: 1971bc96-b801-46eb-917d-87feacbcd658
+  displayName: Blue Shot Bow
+  description: 
+  icon: {fileID: 21300000, guid: ec22508be0cdfba4abbaeb770bef08aa, type: 3}
+  pickup: {fileID: 2943657210836337515, guid: 36048c2e66337d048a9dafbe67e9550f, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: 7a86201573c585c45a25af48a5109443, type: 2}
   equippedPrefab: {fileID: -7896248335364310690, guid: 31038541578fe90449d7bb3661989c9b,
     type: 3}

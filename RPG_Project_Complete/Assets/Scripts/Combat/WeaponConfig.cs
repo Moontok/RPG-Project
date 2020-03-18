@@ -1,10 +1,13 @@
-﻿using RPG.Attributes;
+﻿using System.Collections.Generic;
+using GameDevTV.Inventories;
+using RPG.Attributes;
+using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make NewWeapon", order = 0)]
-    public class WeaponConfig : ScriptableObject
+    public class WeaponConfig : EquipableItem, IModifierProvider
     {
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] Weapon equippedPrefab = null;
@@ -46,8 +49,8 @@ namespace RPG.Combat
         private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
         {
             Transform oldWeapon = rightHand.Find(weaponName);
-            if (oldWeapon == null) oldWeapon = leftHand.Find(weaponName);
-            if (oldWeapon == null ) return;
+            if (oldWeapon == null) { oldWeapon = leftHand.Find(weaponName); }
+            if (oldWeapon == null ) { return; }
 
             oldWeapon.name = "DESTROYING";
             Destroy(oldWeapon.gameObject);
@@ -56,7 +59,7 @@ namespace RPG.Combat
         private Transform GetTransform(Transform rightHand, Transform leftHand)
         {
             Transform handTransform = null;
-            if (isRightHanded) handTransform = rightHand;
+            if (isRightHanded) { handTransform = rightHand; }
             else handTransform = leftHand;
             return handTransform;
         }
@@ -90,6 +93,22 @@ namespace RPG.Combat
         public float GetAttackSpeed()
         {
             return weapopnAttackSpeed;
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return weaponDamage;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return percentageDamageBonus;
+            }
         }
     }
 }
