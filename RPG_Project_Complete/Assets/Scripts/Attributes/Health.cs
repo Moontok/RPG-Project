@@ -60,16 +60,12 @@ namespace RPG.Attributes
         public void TakeDamage(GameObject instigator, float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
-
+            takeDamage.Invoke(damage);
             if (healthPoints == 0)
             {
                 onDie.Invoke();
                 Die();
                 AwardExperience(instigator);
-            }
-            else
-            {                            
-                takeDamage.Invoke(damage);
             }
         }
 
@@ -124,32 +120,15 @@ namespace RPG.Attributes
         public object CaptureState()
         {
             return healthPoints;
-            //Dictionary<string, object> data = new Dictionary<string, object>();
-            //data["healthPoints"] = healthPoints;
-            //data["isDead"] = isDead;
-            //return data;
         }
 
         public void RestoreState(object state)
         {
-            //Dictionary<string, object> data = (Dictionary<string, object>)state;
-            //healthPoints = (float)data["healthPoints"];
-            //isDead = (bool)data["isDead"];
             healthPoints = (float) state;
             if (healthPoints <= 0)
             {
                 Die();
             }
-            // else if (healthPoints > 0 && isDead)
-            // {
-            //     isDead = false;
-            //     this.GetComponent<Animator>().Play("Locomotion", 0);
-            //     this.GetComponent<AIController>().ResetAggravate(); // Added Control Namespace
-            // }
-            // else if (this.gameObject.tag != "Player")
-            // {
-            //     this.GetComponent<AIController>().ResetAggravate(); // Added Control Namespace
-            // }
         }
     }
 }

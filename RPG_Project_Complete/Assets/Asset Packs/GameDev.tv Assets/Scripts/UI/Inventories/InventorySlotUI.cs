@@ -36,7 +36,10 @@ namespace GameDevTV.UI.Inventories
 
         public void AddItems(InventoryItem item, int number)
         {
-            inventory.AddItemToSlot(index, item, number);
+            if (number > 0)
+            {
+                inventory.AddItemToSlot(index, item, number);
+            }
         }
 
         public InventoryItem GetItem()

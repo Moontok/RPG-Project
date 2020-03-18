@@ -15,17 +15,18 @@ MonoBehaviour:
   itemID: 9d72f3a1-d303-48df-917f-65bbf14d9cc4
   displayName: Red Shot Bow
   description: 
-  icon: {fileID: 21300000, guid: ec22508be0cdfba4abbaeb770bef08aa, type: 3}
+  icon: {fileID: 21300000, guid: 666160cbfe5923b45a71fb16f3a2cd62, type: 3}
   pickup: {fileID: 2943657210836337515, guid: 36048c2e66337d048a9dafbe67e9550f, type: 3}
   stackable: 0
   allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: 7a86201573c585c45a25af48a5109443, type: 2}
   equippedPrefab: {fileID: -7896248335364310690, guid: 31038541578fe90449d7bb3661989c9b,
     type: 3}
-  weaponDamage: 3
   percentageDamageBonus: 0
   weaponRange: 10
   weapopnAttackSpeed: 2
   isRightHanded: 0
   projectile: {fileID: 3143281659999280148, guid: 7db555c61a76f5c498973e0cd802666f,
     type: 3}
+  additiveModifiers: []
+  percentageModifiers: []

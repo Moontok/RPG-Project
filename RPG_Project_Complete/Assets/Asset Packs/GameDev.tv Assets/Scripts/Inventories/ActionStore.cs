@@ -18,7 +18,7 @@ namespace GameDevTV.Inventories
         private class DockedItemSlot 
         {
             public ActionItem item;
-            public int number;
+            public int number;            
         }
 
         // PUBLIC

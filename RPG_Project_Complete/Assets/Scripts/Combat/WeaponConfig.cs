@@ -11,12 +11,28 @@ namespace RPG.Combat
     {
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] Weapon equippedPrefab = null;
-        [SerializeField] float weaponDamage = 5f;
+        //[SerializeField] float weaponDamage = 5f;
         [SerializeField] float percentageDamageBonus = 0f;
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float weapopnAttackSpeed = 1f;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
+
+        //Added        
+        [SerializeField]
+        Modifiers[] additiveModifiers = null;
+        [SerializeField]
+        Modifiers[] percentageModifiers = null;
+
+        [System.Serializable]
+        struct Modifiers
+        {
+            public Stat stat;
+            public float value;
+        }
+
+        float weaponDamage = 0f;
+        //End Adding
 
         const string weaponName = "Weapon";
 
@@ -97,18 +113,41 @@ namespace RPG.Combat
 
         public IEnumerable<float> GetAdditiveModifiers(Stat stat)
         {
-            if (stat == Stat.Damage)
+            foreach (var modifier in additiveModifiers)
             {
-                yield return weaponDamage;
+                if (modifier.stat == stat)
+                {
+                    yield return modifier.value;
+                }
             }
         }
 
         public IEnumerable<float> GetPercentageModifiers(Stat stat)
         {
-            if (stat == Stat.Damage)
+            foreach (var modifier in percentageModifiers)
             {
-                yield return percentageDamageBonus;
+                if (modifier.stat == stat)
+                {
+                    yield return modifier.value;
+                }
             }
-        }
+            
+        }        
+
+        // public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        // {
+        //     if (stat == Stat.Damage)
+        //     {
+        //         yield return weaponDamage;
+        //     }
+        // }
+
+        // public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        // {
+        //     if (stat == Stat.Damage)
+        //     {
+        //         yield return percentageDamageBonus;
+        //     }
+        // }
     }
 }
