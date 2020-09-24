@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 0.148
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11439138, g: 0.09100387, b: 0.15620479, a: 0.148}
+  m_IndirectSpecularColor: {r: 0.11454513, g: 0.09120316, b: 0.15632686, a: 0.148}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 084e8903ac9b3874abaf8046a697d512,
     type: 2}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 1647461037}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -119,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 20e27bb7eee42024ab2740289ee782f2, type: 2}
@@ -4676,91 +4678,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1595744846}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &391862373
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1033548865}
-    m_Modifications:
-    - target: {fileID: 339285675270635469, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: uniqueIdentifier
-      value: 36321cd1-2344-4322-9ca4-ba94c02c2b74
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -14.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.98699856
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 34.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7006139021948167736, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: e5780be8fca08bf4094052e9fed885e9,
-        type: 2}
-    - target: {fileID: 7006139021948167736, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: number
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9156455132051124334, guid: 0be176a0525f2394da8a90d25e31551e,
-        type: 3}
-      propertyPath: m_Name
-      value: Health Pickup Spawner
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0be176a0525f2394da8a90d25e31551e, type: 3}
 --- !u!1001 &392120566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13033,7 +12950,6 @@ Transform:
   - {fileID: 1896368773}
   - {fileID: 395940111}
   - {fileID: 823735558}
-  - {fileID: 1302973979}
   - {fileID: 1833940529}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -16363,12 +16279,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1566949909}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1302973979 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
-    type: 3}
-  m_PrefabInstance: {fileID: 391862373}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1304904133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18221,6 +18131,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -18245,6 +18156,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1436412899
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21007,6 +20919,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c54194384c09a45b991556c9fe41a5, type: 3}
+--- !u!850595691 &1647461037
+LightingSettings:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Settings.lighting
+  serializedVersion: 2
+  m_GIWorkflowMode: 0
+  m_EnableBakedLightmaps: 0
+  m_EnableRealtimeLightmaps: 0
+  m_RealtimeEnvironmentLighting: 1
+  m_BounceScale: 1
+  m_AlbedoBoost: 1
+  m_IndirectOutputScale: 1
+  m_UsingShadowmask: 1
+  m_BakeBackend: 1
+  m_LightmapMaxSize: 1024
+  m_BakeResolution: 40
+  m_Padding: 2
+  m_TextureCompression: 1
+  m_AO: 0
+  m_AOMaxDistance: 1
+  m_CompAOExponent: 1
+  m_CompAOExponentDirect: 0
+  m_ExtractAO: 0
+  m_MixedBakeMode: 2
+  m_LightmapsBakeMode: 1
+  m_FilterMode: 1
+  m_LightmapParameters: {fileID: 0}
+  m_ExportTrainingData: 0
+  m_TrainingDataDestination: TrainingData
+  m_RealtimeResolution: 2
+  m_ForceWhiteAlbedo: 0
+  m_ForceUpdates: 0
+  m_FinalGather: 0
+  m_FinalGatherRayCount: 256
+  m_FinalGatherFiltering: 1
+  m_PVRCulling: 1
+  m_PVRSampling: 1
+  m_PVRDirectSampleCount: 32
+  m_PVRSampleCount: 500
+  m_PVREnvironmentSampleCount: 500
+  m_PVREnvironmentReferencePointCount: 2048
+  m_LightProbeSampleCountMultiplier: 4
+  m_PVRBounces: 2
+  m_PVRRussianRouletteStartBounce: 2
+  m_PVREnvironmentMIS: 0
+  m_PVRFilteringMode: 2
+  m_PVRDenoiserTypeDirect: 0
+  m_PVRDenoiserTypeIndirect: 0
+  m_PVRDenoiserTypeAO: 0
+  m_PVRFilterTypeDirect: 0
+  m_PVRFilterTypeIndirect: 0
+  m_PVRFilterTypeAO: 0
+  m_PVRFilteringGaussRadiusDirect: 1
+  m_PVRFilteringGaussRadiusIndirect: 5
+  m_PVRFilteringGaussRadiusAO: 2
+  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+  m_PVRFilteringAtrousPositionSigmaIndirect: 2
+  m_PVRFilteringAtrousPositionSigmaAO: 1
 --- !u!1001 &1653049081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25086,6 +25059,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3140017291620197963, guid: 4dbc8801e237a1f4d88b16f4808df7da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
     - target: {fileID: 3331752661861527261, guid: 4dbc8801e237a1f4d88b16f4808df7da,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -25169,7 +25147,7 @@ PrefabInstance:
     - target: {fileID: 4215598670598143183, guid: 4dbc8801e237a1f4d88b16f4808df7da,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -644.8001
+      value: -570.7501
       objectReference: {fileID: 0}
     - target: {fileID: 4215598670598143183, guid: 4dbc8801e237a1f4d88b16f4808df7da,
         type: 3}
@@ -27360,7 +27338,7 @@ PrefabInstance:
     - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3895687047869753869, guid: 0be176a0525f2394da8a90d25e31551e,
         type: 3}
