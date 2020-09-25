@@ -13,14 +13,32 @@ MonoBehaviour:
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: a
-    text: Hello
+  - uniqueID: b99fdf9b-d59d-4696-af26-cc426f8e3187
+    text: a
     children:
-    - b
-    - c
-  - uniqueID: b
-    text: Hello back
+    - 92b51f51-7852-4ef8-bc3c-b619115b14e0
+    - 713d69ed-eae8-4fbb-8965-93bb41167980
+    rect:
+      serializedVersion: 2
+      x: 106
+      y: 133
+      width: 200
+      height: 100
+  - uniqueID: 713d69ed-eae8-4fbb-8965-93bb41167980
+    text: b
     children: []
-  - uniqueID: c
-    text: Go away!
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 496
+      width: 200
+      height: 100
+  - uniqueID: 92b51f51-7852-4ef8-bc3c-b619115b14e0
+    text: c
     children: []
+    rect:
+      serializedVersion: 2
+      x: 513
+      y: 99
+      width: 200
+      height: 100
