@@ -210,7 +210,7 @@ namespace RPG.Dialogue.Editor
         private void DrawConnections(DialogueNode node)
         {
             Vector3 startPosition = new Vector2(node.GetRect().xMax, node.GetRect().center.y);
-            foreach (DialogueNode childNode in selectedDialogue.GetAllChidren(node))
+            foreach (DialogueNode childNode in selectedDialogue.GetAllChildren(node))
             {
                 Vector3 endPosition = new Vector2(childNode.GetRect().xMin, childNode.GetRect().center.y);
                 Vector3 controlPointOffset = endPosition - startPosition;

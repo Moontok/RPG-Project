@@ -278,6 +278,9 @@ MonoBehaviour:
   - type: 4
     texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotspot: {x: 0, y: 0}
+  - type: 6
+    texture: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
+    hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
 --- !u!114 &8759279735560189445
 MonoBehaviour:
@@ -355,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650198fedfcd30041924331ebf5619dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDialogue: {fileID: 11400000, guid: c32bef8e20639d24e990472c47e5aaa4, type: 2}
+  testDialogue: {fileID: 11400000, guid: c32bef8e20639d24e990472c47e5aaa4, type: 2}
 --- !u!1 &2171779761945979921
 GameObject:
   m_ObjectHideFlags: 0
