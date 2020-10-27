@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 6407229099557675057}
   - component: {fileID: 7611345479047615864}
   - component: {fileID: 6502949666757927747}
+  - component: {fileID: 3431763455857601242}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -358,7 +359,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650198fedfcd30041924331ebf5619dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testDialogue: {fileID: 11400000, guid: c32bef8e20639d24e990472c47e5aaa4, type: 2}
+  playerName: Stan Booker
+--- !u!114 &3431763455857601242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647553908357431780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1b60262fd62e748a0cb75ee0e8c49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statuses:
+  - quest: {fileID: 11400000, guid: 1b28820125e01234aabc6794e9b309b0, type: 2}
+    completedObjectives:
+    - Step 1
+    - Step 2
+  - quest: {fileID: 11400000, guid: d514c4718486fc941b5cd5a531a1c745, type: 2}
+    completedObjectives:
+    - Step 1
 --- !u!1 &2171779761945979921
 GameObject:
   m_ObjectHideFlags: 0
