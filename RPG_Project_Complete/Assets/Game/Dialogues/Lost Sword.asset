@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8658314597359464801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 206ff057-78bb-4df5-ac6a-3551321b3a4b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Isn't it on your back?
+  children:
+  - 3892323e-0977-4e87-9280-02ff832310f0
+  rect:
+    serializedVersion: 2
+    x: 570
+    y: 223
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-7941007795818204088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 0d2945de-ae8c-4a04-a2f1-a6b263ef9c50
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Sounds like you are set!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1089
+    y: 142
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3616514979459367882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: a2d236f0-6f51-4854-8869-1ddf9cc2f26f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Do you want me to help you find it?
+  children:
+  - 91cfd707-c540-47cb-8484-8211fa187d27
+  rect:
+    serializedVersion: 2
+    x: 1070
+    y: 330
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1004264586294890702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 3892323e-0977-4e87-9280-02ff832310f0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: No, this is my backup sword.
+  children:
+  - 0d2945de-ae8c-4a04-a2f1-a6b263ef9c50
+  - a2d236f0-6f51-4854-8869-1ddf9cc2f26f
+  rect:
+    serializedVersion: 2
+    x: 820
+    y: 223
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-953700457056120529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 91cfd707-c540-47cb-8484-8211fa187d27
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: That would be great! It is my favorite sword.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1320
+    y: 330
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb48511ccbec3424ca706f93506cecc7, type: 3}
+  m_Name: Lost Sword
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 4515959806976321977}
+  - {fileID: 300591572958150582}
+  - {fileID: -8658314597359464801}
+  - {fileID: -1004264586294890702}
+  - {fileID: -7941007795818204088}
+  - {fileID: -3616514979459367882}
+  - {fileID: -953700457056120529}
+--- !u!114 &300591572958150582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: f526d36f-453e-418d-8ac5-4870dca498fa
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Not my problem!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 576
+    y: 69
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &4515959806976321977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 47466e8e-d7e3-4967-b4b3-849bd9778166
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 'I have misplaced m'' sword! '
+  children:
+  - f526d36f-453e-418d-8ac5-4870dca498fa
+  - 206ff057-78bb-4df5-ac6a-3551321b3a4b
+  rect:
+    serializedVersion: 2
+    x: 263
+    y: 107
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
