@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Find the missing sword.
   m_EditorClassIdentifier: 
   objectives:
-  - Step 1
-  - Step 2
-  - Step 3
+  - reference: 1
+    description: Talk to the guard on the bridge.
+  - reference: 2
+    description: 
+  - reference: 3
+    description: 
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: 6c89fd4b4b7d8e542a7579e83d3f8666, type: 2}

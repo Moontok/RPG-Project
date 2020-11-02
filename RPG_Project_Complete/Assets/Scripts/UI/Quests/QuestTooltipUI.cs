@@ -23,16 +23,16 @@ namespace RPG.UI.Quests
                 Destroy(child.gameObject);
             }
 
-            foreach (string objective in quest.GetObjectives())
+            foreach (var objective in quest.GetObjectives())
             {
                 GameObject prefab = objectiveIncompletePrefab;
-                if(status.IsObjectiveComplete(objective))
+                if(status.IsObjectiveComplete(objective.reference))
                 {
                     prefab = objectivePrefab;
                 }
                 GameObject objectiveInstance = Instantiate(prefab, objectiveContainer);
                 TextMeshProUGUI objectiveText = objectiveInstance.GetComponentInChildren<TextMeshProUGUI>();
-                objectiveText.text = objective;
+                objectiveText.text = objective.description;
             }
         }
     }
