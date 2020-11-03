@@ -15,10 +15,8 @@ MonoBehaviour:
   objectives:
   - reference: 1
     description: Talk to the guard on the bridge.
-  - reference: 2
-    description: 
-  - reference: 3
-    description: 
   rewards:
   - number: 1
     item: {fileID: 11400000, guid: 6c89fd4b4b7d8e542a7579e83d3f8666, type: 2}
+  - number: 3
+    item: {fileID: 11400000, guid: 85adbbb7cb7baca4e8262ffb82f03357, type: 2}

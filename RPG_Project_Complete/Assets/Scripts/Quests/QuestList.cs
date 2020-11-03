@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using GameDevTV.Inventories;
 
 namespace RPG.Quests
 {
@@ -27,6 +28,10 @@ namespace RPG.Quests
         {
             QuestStatus status = GetQuestStatus(quest);
             status.CompleteObjective(objective);
+            if(status.IsComplete())
+            {
+                GiveReward(quest);
+            }
             if(onUpdate != null)
             {
                 onUpdate();
@@ -53,6 +58,18 @@ namespace RPG.Quests
                 }                
             }
             return null;
+        }
+
+        private void GiveReward(Quest quest)
+        {
+            foreach (var reward in quest.GetRewards())
+            {
+                bool success = GetComponent<GameDevTV.Inventories.Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
+                if(!success)
+                {
+                    GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
+                }
+            }
         }
 
         public object CaptureState()
