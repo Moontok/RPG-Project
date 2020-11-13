@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8884325566065853512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 5ed288cf-68fd-44cb-afc2-a4c946d2c117
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: THANKS! I didn't think I would get it back.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 822
+    y: 523
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-8658314597359464801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,6 +49,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-7941007795818204088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,7 +65,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: Sounds like you are set!
-  children: []
+  children:
+  - fd698e55-c35e-408e-935a-fc87a5439bf4
   rect:
     serializedVersion: 2
     x: 1089
@@ -47,6 +75,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-3616514979459367882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +101,74 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Find the missing sword.
+        negate: 1
+--- !u!114 &-2131368352731109855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: e675a2b1-768e-43d4-89db-d9a2682055d5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I am already on it!
+  children:
+  - b6e9d169-4946-41ea-b8e1-5f42bcd0dd29
+  rect:
+    serializedVersion: 2
+    x: 575
+    y: 364
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Find the missing sword.
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Find the missing sword.
+        negate: 1
+--- !u!114 &-2065527534037806726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: c32f0324-eb64-4373-89b7-688e289f2cc1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh, okay...
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 826
+    y: 69
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-1004264586294890702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +194,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-953700457056120529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +219,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: GiveQuest
+  condition:
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +241,12 @@ MonoBehaviour:
   - {fileID: -7941007795818204088}
   - {fileID: -3616514979459367882}
   - {fileID: -953700457056120529}
+  - {fileID: -2131368352731109855}
+  - {fileID: 2575806309841842336}
+  - {fileID: 4283198635486136945}
+  - {fileID: -8884325566065853512}
+  - {fileID: -2065527534037806726}
+  - {fileID: 600033222342392426}
 --- !u!114 &300591572958150582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
   text: Not my problem!
-  children: []
+  children:
+  - c32f0324-eb64-4373-89b7-688e289f2cc1
   rect:
     serializedVersion: 2
     x: 576
@@ -162,6 +271,98 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
+--- !u!114 &600033222342392426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: fd698e55-c35e-408e-935a-fc87a5439bf4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Right...
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1339
+    y: 142
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2575806309841842336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: b6e9d169-4946-41ea-b8e1-5f42bcd0dd29
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oops, bad memory...
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 821
+    y: 371
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4283198635486136945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 0b8157c5-d9e4-4fa3-9602-a29a70c34b24
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I found the sword!
+  children:
+  - 5ed288cf-68fd-44cb-afc2-a4c946d2c117
+  rect:
+    serializedVersion: 2
+    x: 572
+    y: 523
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Find the missing sword.
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Find the missing sword.
+        negate: 0
+      - predicate: HasInventoryItem
+        parameters:
+        - 6d7abbaa-cacd-4001-99f6-2b86999e5207
+        negate: 0
 --- !u!114 &4515959806976321977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +380,8 @@ MonoBehaviour:
   children:
   - f526d36f-453e-418d-8ac5-4870dca498fa
   - 206ff057-78bb-4df5-ac6a-3551321b3a4b
+  - e675a2b1-768e-43d4-89db-d9a2682055d5
+  - 0b8157c5-d9e4-4fa3-9602-a29a70c34b24
   rect:
     serializedVersion: 2
     x: 263
@@ -187,3 +390,5 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
