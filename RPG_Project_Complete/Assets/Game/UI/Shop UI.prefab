@@ -77,6 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6480885874671528616}
+  - component: {fileID: 8622480486871143294}
   m_Layer: 5
   m_Name: Shop UI
   m_TagString: Untagged
@@ -112,6 +113,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1439.5671, y: 821.759}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8622480486871143294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088321620040837441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2e1309b6c2212448bcc419c03123ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &25744644035898201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227,6 +240,11 @@ PrefabInstance:
     - target: {fileID: 2418325413934703499, guid: 789b0e971a4b25b4cb7358db3a078eb4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146902377045530099, guid: 789b0e971a4b25b4cb7358db3a078eb4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8812346979106614900, guid: 789b0e971a4b25b4cb7358db3a078eb4,
@@ -353,6 +371,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8146902377045530099, guid: 789b0e971a4b25b4cb7358db3a078eb4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8812346979106614900, guid: 789b0e971a4b25b4cb7358db3a078eb4,
         type: 3}
       propertyPath: m_Name
@@ -475,6 +498,11 @@ PrefabInstance:
     - target: {fileID: 2418325413934703499, guid: 789b0e971a4b25b4cb7358db3a078eb4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146902377045530099, guid: 789b0e971a4b25b4cb7358db3a078eb4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8812346979106614900, guid: 789b0e971a4b25b4cb7358db3a078eb4,
@@ -1726,7 +1754,7 @@ PrefabInstance:
     - target: {fileID: 2045857810563017717, guid: c2ee367aaa176514e9082314f604ee4d,
         type: 3}
       propertyPath: m_Value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2462944993683801597, guid: c2ee367aaa176514e9082314f604ee4d,
         type: 3}
