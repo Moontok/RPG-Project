@@ -12,32 +12,26 @@ namespace RPG.UI.Shops
         [SerializeField] RowUI rowPrefab = null;
         [SerializeField] TextMeshProUGUI totalField = null;
         [SerializeField] Button confirmButton = null;
+        [SerializeField] Button switchButton = null;
 
         Shopper shopper = null;
         Shop currentShop = null;
-        Color originalTotalTextColor = Color.black;
+
+        Color originalTotalTextColor;
 
         // Start is called before the first frame update
         void Start()
         {
             originalTotalTextColor = totalField.color;
+
             shopper = GameObject.FindGameObjectWithTag("Player").GetComponent<Shopper>();
             if (shopper == null) return;
 
             shopper.activeShopChange += ShopChanged;
             confirmButton.onClick.AddListener(ConfirmTransaction);
-            
+            switchButton.onClick.AddListener(SwitchMode);
+
             ShopChanged();
-        }
-
-        public void Close()
-        {
-            shopper.SetActiveShop(null);
-        }
-
-        public void ConfirmTransaction()
-        {
-            currentShop.ConfirmTransaction();
         }
 
         private void ShopChanged()
@@ -46,9 +40,13 @@ namespace RPG.UI.Shops
             {
                 currentShop.onChange -= RefreshUI;
             }
-
             currentShop = shopper.GetActiveShop();
-            this.gameObject.SetActive(currentShop != null);
+            gameObject.SetActive(currentShop != null);
+
+            foreach (FilterButtonUI button in GetComponentsInChildren<FilterButtonUI>())
+            {
+                button.SetShop(currentShop);
+            }
 
             if (currentShop == null) return;
             shopName.text = currentShop.GetShopName();
@@ -74,6 +72,38 @@ namespace RPG.UI.Shops
             totalField.text = $"Total: ${currentShop.TransactionTotal():N2}";
             totalField.color = currentShop.HasSufficientFunds() ? originalTotalTextColor : Color.red;
             confirmButton.interactable = currentShop.CanTransact();
+            TextMeshProUGUI switchText = switchButton.GetComponentInChildren<TextMeshProUGUI>();
+            TextMeshProUGUI confirmText = confirmButton.GetComponentInChildren<TextMeshProUGUI>();
+            if (currentShop.IsBuyingMode())
+            {
+                switchText.text = "Switch To Selling";
+                confirmText.text = "Buy";
+            }
+            else
+            {
+                switchText.text = "Switch To Buying";
+                confirmText.text = "Sell";
+            }
+
+            foreach (FilterButtonUI button in GetComponentsInChildren<FilterButtonUI>())
+            {
+                button.RefreshUI();
+            }
+        }
+
+        public void Close()
+        {
+            shopper.SetActiveShop(null);
+        }
+
+        public void ConfirmTransaction()
+        {
+            currentShop.ConfirmTransaction();
+        }
+
+        public void SwitchMode()
+        {
+            currentShop.SelectMode(!currentShop.IsBuyingMode());
         }
     }
 }
