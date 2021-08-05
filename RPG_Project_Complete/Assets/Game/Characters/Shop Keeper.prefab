@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb22a08e100d17f4eb954e4ba67aa0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopName: 
 --- !u!1001 &61376713418423382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,6 +34,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7855338876141587594, guid: 2bff11d9dfc3685418e51babedca5971,
+        type: 3}
+      propertyPath: characterClass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1764093101998332747, guid: 2bff11d9dfc3685418e51babedca5971,
         type: 3}
       propertyPath: m_Avatar
@@ -98,7 +104,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop Keeper
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8559691094548668725, guid: 2bff11d9dfc3685418e51babedca5971, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2bff11d9dfc3685418e51babedca5971, type: 3}
 --- !u!1 &9219141309441052919 stripped
 GameObject:

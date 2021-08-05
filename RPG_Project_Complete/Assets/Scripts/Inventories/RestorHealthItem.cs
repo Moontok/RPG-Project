@@ -4,10 +4,10 @@ using GameDevTV.Inventories;
 using RPG.Attributes;
 using UnityEngine;
 
-namespace RPG.Inventory
+namespace RPG.Inventories
 {
-    [CreateAssetMenu(menuName = ("GameDevTV/GameDevTV.UI.InventorySystem/Light Action Item"))]
-    public class LightSourceItem : ActionItem
+    [CreateAssetMenu(menuName = ("GameDevTV/GameDevTV.UI.InventorySystem/Health Action Item"))]
+    public class RestorHealthItem : ActionItem
     {
         [SerializeField] float healthAmount = 0f;
 
