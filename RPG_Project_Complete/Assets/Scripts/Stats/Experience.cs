@@ -8,10 +8,15 @@ namespace RPG.Stats
     {
         [SerializeField] float experiencePoints = 0f;
 
-        //public delegate void ExperienceGainedDelegate();
-        //public event ExperienceGainedDelegate onExperienceGained;
-        //Subscribed inside of BaseStats Start()
         public event Action onExperienceGained;
+
+        void Update() 
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                GainExperience(Time.deltaTime * 1000);
+            }
+        }
 
         public void GainExperience(float experience)
         {
