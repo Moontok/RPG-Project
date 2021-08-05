@@ -19,5 +19,6 @@ MonoBehaviour:
   pickup: {fileID: 7166656622812632736, guid: c845bc654d53ebd43ba69310754d88aa, type: 3}
   stackable: 1
   price: 1.5
+  category: 3
   consumable: 1
   healthAmount: 50

@@ -20152,7 +20152,7 @@ PrefabInstance:
     - target: {fileID: 8329241457495733344, guid: de16c5a7179f5a4439b54488cfc1d76d,
         type: 3}
       propertyPath: stockConfig.Array.data[0].intialStock
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8329241457495733344, guid: de16c5a7179f5a4439b54488cfc1d76d,
         type: 3}
@@ -20162,7 +20162,7 @@ PrefabInstance:
     - target: {fileID: 8329241457495733344, guid: de16c5a7179f5a4439b54488cfc1d76d,
         type: 3}
       propertyPath: stockConfig.Array.data[2].intialStock
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8329241457495733344, guid: de16c5a7179f5a4439b54488cfc1d76d,
         type: 3}
@@ -27235,7 +27235,7 @@ PrefabInstance:
     - target: {fileID: 4215598670598143183, guid: 4dbc8801e237a1f4d88b16f4808df7da,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -570.74963
+      value: -570.74994
       objectReference: {fileID: 0}
     - target: {fileID: 4215684923950617743, guid: 4dbc8801e237a1f4d88b16f4808df7da,
         type: 3}

@@ -18,13 +18,16 @@ MonoBehaviour:
   icon: {fileID: 0}
   pickup: {fileID: 0}
   stackable: 0
+  price: 0
+  category: 0
   allowedEquipLocation: 5
   animatorOverride: {fileID: 0}
   equippedPrefab: {fileID: 4507989336061510178, guid: 0b6336d1f9c1dd344963fdfa11f39c8e,
     type: 3}
-  weaponDamage: 0
   percentageDamageBonus: 0
   weaponRange: 2
   weapopnAttackSpeed: 1
   isRightHanded: 1
   projectile: {fileID: 0}
+  additiveModifiers: []
+  percentageModifiers: []
