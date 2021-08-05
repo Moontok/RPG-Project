@@ -10,9 +10,8 @@ namespace RPG.Shops
     public class Shop : MonoBehaviour, IRaycastable
     {
         [SerializeField] string shopName = "";
-        [Range(0, 100)][SerializeField] float sellingPenaltyPercentage = 20f;
 
-        [SerializeField] StockItemConfig[] stockConfig = null;        
+        [SerializeField] StockItemConfig[] stockConfig = null;
 
         [System.Serializable]
         class StockItemConfig
@@ -25,8 +24,6 @@ namespace RPG.Shops
         Dictionary<InventoryItem, int> transaction = new Dictionary<InventoryItem, int>();
         Dictionary<InventoryItem, int> stock = new Dictionary<InventoryItem, int>();
         Shopper currentShopper = null;
-        bool isBuyingMode = true;
-        ItemCategory filter = ItemCategory.None;
 
         public event Action onChange;
 
@@ -45,107 +42,41 @@ namespace RPG.Shops
 
         public IEnumerable<ShopItem> GetFilteredItems() 
         {
-            foreach (ShopItem shopItem in GetAllItems())
-            {
-                InventoryItem item = shopItem.GetInventoryItem();
-                if (filter == ItemCategory.None || item.GetCategory() == filter)
-                {
-                    yield return shopItem;
-                }
-            }
+            return GetAllItems();
         }
 
         public IEnumerable<ShopItem> GetAllItems()
-        {
+        { 
             foreach (StockItemConfig config in stockConfig)
             {
-                float price = GetPrice(config);
+                float price = config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
                 int quantityInTransaction = 0;
                 transaction.TryGetValue(config.item, out quantityInTransaction);
-                int availability = GetAvailability(config.item);
-                yield return new ShopItem(config.item, availability, price, quantityInTransaction);
+                int currentStock = stock[config.item];
+                yield return new ShopItem(config.item, currentStock, price, quantityInTransaction);
             }
+
         }
 
-        public void SelectFilter(ItemCategory category) 
-        {
-            filter = category;
-            print(category);
-
-            if (onChange != null)
-            {
-                onChange();
-            }
-        }
-
-        public ItemCategory GetFilter() 
-        { 
-            return filter; 
-        }
-
-        public void SelectMode(bool isBuying) 
-        {
-            isBuyingMode = isBuying;
-            if (onChange != null)
-            {
-                onChange();
-            }
-        }
-
-        public bool IsBuyingMode() 
-        { 
-            return isBuyingMode; 
-        }
+        public void SelectFilter(ItemCategory category) {}
+        public ItemCategory GetFilter() { return ItemCategory.None; }
+        public void SelectMode(bool isBuying) {}
+        public bool IsBuyingMode() { return true; }
 
         public bool CanTransact() 
         { 
             if (IsTransactionEmpty()) return false;
             if (!HasSufficientFunds()) return false;
-            if (!HasInventorySpace()) return false;
+            
             return true; 
         }
 
-        public bool HasInventorySpace()
-        {
-            if (!isBuyingMode) return true;
-            
-            Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
-            if (shopperInventory == null) return false;
-
-            List<InventoryItem> flatItems = new List<InventoryItem>();
-            foreach (ShopItem shopItem in GetAllItems())
-            {
-                InventoryItem item = shopItem.GetInventoryItem();
-                int quantity = shopItem.GetQuantityInTransaction();
-                for (int i = 0; i < quantity; i++)
-                {
-                    flatItems.Add(item);
-                }
-            }
-            return shopperInventory.HasSpaceFor(flatItems);
-        }
-
-        public bool HasSufficientFunds()
-        {
-            if (!isBuyingMode) return true;
-            Purse purse = currentShopper.GetComponent<Purse>();
-            if (purse == null) return false;
-
-            return purse.GetBalance() >= TransactionTotal();
-        }
-
-        public bool IsTransactionEmpty()
-        {
-            return transaction.Count == 0;
-        }
-
-         public void ConfirmTransaction()
+        public void ConfirmTransaction() 
         {
             Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
             Purse shopperPurse = currentShopper.GetComponent<Purse>();
             if (shopperInventory == null || shopperPurse == null) return;
 
-            // Transfer to or from the inventory
             foreach (ShopItem shopItem in GetAllItems())
             {
                 InventoryItem item = shopItem.GetInventoryItem();
@@ -153,18 +84,16 @@ namespace RPG.Shops
                 float price = shopItem.GetPrice();
                 for (int i = 0; i < quantity; i++)
                 {
-                    if (isBuyingMode)
+                    if (shopperPurse.GetBalance() < price) break;
+                    bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
+                    if (success)
                     {
-                        BuyItem(shopperInventory, shopperPurse, item, price);
-                    }
-                    else
-                    {
-                        SellItem(shopperInventory, shopperPurse, item, price);
+                        AddToTransaction(item, -1);
+                        stock[item] --;
+                        shopperPurse.UpdateBalance(-price);
                     }
                 }
             }
-            // Removal from transaction
-            // Debting or Crediting of funds
 
             if (onChange != null)
             {
@@ -187,24 +116,22 @@ namespace RPG.Shops
             return shopName;
         }
         
-public void AddToTransaction(InventoryItem item, int quantity) 
+        public void AddToTransaction(InventoryItem item, int quantity) 
         {
             if (!transaction.ContainsKey(item))
             {
                 transaction[item] = 0;
             }
 
-
-            int availability = GetAvailability(item);
-            if (transaction[item] + quantity > availability)
+            if (transaction[item] + quantity > stock[item])
             {
-                transaction[item] = availability;
+                transaction[item] = stock[item];
             }
             else
             {
                 transaction[item] += quantity;
             }
-            
+
             if (transaction[item] <= 0)
             {
                 transaction.Remove(item);
@@ -214,7 +141,7 @@ public void AddToTransaction(InventoryItem item, int quantity)
             {
                 onChange();
             }
-        }
+        } 
 
         public CursorType GetCursorType()
         {
@@ -230,77 +157,17 @@ public void AddToTransaction(InventoryItem item, int quantity)
             return true;
         }
 
-        private int GetAvailability(InventoryItem item)
+        public bool HasSufficientFunds()
         {
-            if (isBuyingMode)
-            {
-                return stock[item];
-            }
+            Purse purse = currentShopper.GetComponent<Purse>();
+            if (purse == null) return false;
 
-            return CountItemsInInventory(item);
+            return purse.GetBalance() >= TransactionTotal();
         }
 
-        private int CountItemsInInventory(InventoryItem item)
+        private bool IsTransactionEmpty()
         {
-            Inventory inventory = currentShopper.GetComponent<Inventory>();
-            if (inventory == null) return 0;
-
-            int total = 0;
-            for (int i = 0; i < inventory.GetSize(); i++)
-            {
-                if (inventory.GetItemInSlot(i) == item)
-                {
-                    total += inventory.GetNumberInSlot(i);
-                }
-            }
-
-            return total;
-        }
-
-        private float GetPrice(StockItemConfig config)
-        {
-            if (isBuyingMode)
-            {
-                return config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
-            }
-            return config.item.GetPrice() * (1 - sellingPenaltyPercentage / 100);
-        }        
-
-        private void SellItem(Inventory shopperInventory, Purse shopperPurse, InventoryItem item, float price)
-        {
-            int slot = FindFirstItemSlot(shopperInventory, item);
-            if (slot == -1) return;
-            AddToTransaction(item, -1);
-
-            shopperInventory.RemoveFromSlot(slot, 1);
-            stock[item]++;
-            shopperPurse.UpdateBalance(price);
-        }
-
-        private void BuyItem(Inventory shopperInventory, Purse shopperPurse, InventoryItem item, float price)
-        {
-            if (shopperPurse.GetBalance() < price) return;
-
-            bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
-            if (success)
-            {
-                AddToTransaction(item, -1);
-                stock[item]--;
-                shopperPurse.UpdateBalance(-price);
-            }
-        }
-
-        private int FindFirstItemSlot(Inventory shopperInventory, InventoryItem item)
-        {
-            for (int i = 0; i < shopperInventory.GetSize(); i++)
-            {
-                if (shopperInventory.GetItemInSlot(i) == item)
-                {
-                    return i;
-                }
-            }
-
-            return -1;
+            return transaction.Count == 0;
         }
     }
 }

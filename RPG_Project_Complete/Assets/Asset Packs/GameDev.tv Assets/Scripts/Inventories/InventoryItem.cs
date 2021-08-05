@@ -27,8 +27,7 @@ namespace GameDevTV.Inventories
         [SerializeField] Pickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
-        [SerializeField] float price = 0;
-        [SerializeField] ItemCategory category = ItemCategory.None;
+        [SerializeField] float price = 0f;
 
         // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
@@ -108,11 +107,6 @@ namespace GameDevTV.Inventories
         public float GetPrice()
         {
             return price;
-        }
-
-        public ItemCategory GetCategory()
-        {
-            return category;
         }
 
         // PRIVATE

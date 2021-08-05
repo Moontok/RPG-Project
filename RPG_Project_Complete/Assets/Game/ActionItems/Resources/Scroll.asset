@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Scroll
   m_EditorClassIdentifier: 
   itemID: ccef81d4-bf00-4ced-8551-78e6ed9b7056
-  displayName: Old Scroll
-  description: That is a funny story...
+  displayName: 
+  description: 
   icon: {fileID: 21300000, guid: a1ec2c0ddc0da634b85f0f465fec2d0d, type: 3}
   pickup: {fileID: 5579120515323433686, guid: 9eb971571590e784ea99bdea957190ab, type: 3}
   stackable: 1
   price: 10
-  category: 4
   consumable: 1
