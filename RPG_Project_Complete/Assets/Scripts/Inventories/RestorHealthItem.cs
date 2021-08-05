@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RPG.Inventories
 {
-    [CreateAssetMenu(menuName = ("GameDevTV/GameDevTV.UI.InventorySystem/Health Action Item"))]
+    [CreateAssetMenu(menuName = ("Item/Health Action Item"))]
     public class RestorHealthItem : ActionItem
     {
         [SerializeField] float healthAmount = 0f;

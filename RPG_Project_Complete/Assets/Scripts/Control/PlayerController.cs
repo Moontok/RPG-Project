@@ -11,6 +11,7 @@ namespace RPG.Control
     public class PlayerController : MonoBehaviour
     {
         Health health = null;
+        ActionStore actionStore = null;
 
         [System.Serializable]
         struct CursorMapping
@@ -23,12 +24,14 @@ namespace RPG.Control
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
         //[SerializeField] float raycastRadius = 1f;
+        [SerializeField] int numberOfAbilities = 6;
 
         bool isDraggingUI = false;
 
         private void Awake() 
         {
-            health = this.GetComponent<Health>();
+            health = this.GetComponent<Health>();            
+            actionStore = GetComponent<ActionStore>();
         }
 
         void Update()
@@ -40,13 +43,15 @@ namespace RPG.Control
                 SetCursor(CursorType.None);
                 return;
             }
+
+            UseAbilities();
             
             if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
 
             SetCursor(CursorType.None);
         }
-        
+
         private void CheckSpecialAbilityKeys()
         {
             var actionStore = GetComponent<ActionStore>();
@@ -98,6 +103,17 @@ namespace RPG.Control
             return false;
         }
 
+        private void UseAbilities()
+        {
+            for (int i = 0; i < numberOfAbilities; i++)
+            { 
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+                {
+                    actionStore.Use(i, gameObject);
+                }                
+            }           
+        }
+
         private bool InteractWithComponent()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
@@ -136,7 +152,7 @@ namespace RPG.Control
             {
                 if (!this.GetComponent<Mover>().CanMoveTo(target)) return false;
 
-                if(Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0))
                 {
                     this.GetComponent<Mover>().StartMoveAction(target, 1f);
                 }

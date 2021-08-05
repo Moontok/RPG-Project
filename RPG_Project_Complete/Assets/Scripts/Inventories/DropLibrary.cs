@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RPG.Inventories
 {
-    [CreateAssetMenu(menuName = ("RPG/Inventory/Drop Library"))]
+    [CreateAssetMenu(menuName = ("Item/Drop Library"))]
     public class DropLibrary : ScriptableObject
     {
         [SerializeField] DropConfig[] potentialDrops = null;

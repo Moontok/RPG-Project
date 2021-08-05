@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RPG.Inventories
 {
-    [CreateAssetMenu(menuName = ("GameDevTV/GameDevTV.UI.InventorySystem/Light Action Item"))]
+    [CreateAssetMenu(menuName = ("Item/Light Action Item"))]
     public class LightSourceItem : ActionItem
     {
         [SerializeField] float healthAmount = 0f;
