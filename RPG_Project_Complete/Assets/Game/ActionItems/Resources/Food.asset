@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Food
   m_EditorClassIdentifier: 
   itemID: 162c9b5f-ced7-4093-8c69-70e41612bbfa
-  displayName: Food
+  displayName: 
   description: 
   icon: {fileID: 21300000, guid: 9b43895b3616fc1459fda23266cee62e, type: 3}
   pickup: {fileID: 7166656622812632736, guid: c845bc654d53ebd43ba69310754d88aa, type: 3}
   stackable: 1
-  price: 1.5
   consumable: 1
   healthAmount: 50

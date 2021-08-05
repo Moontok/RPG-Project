@@ -3,7 +3,7 @@ using GameDevTV.Inventories;
 using RPG.Stats;
 using UnityEngine;
 
-namespace RPG.Inventories
+namespace RPG.Inventory
 {
     [CreateAssetMenu(menuName = ("RPG/Inventory/Equipable Item"))]
     public class StatsEquipableItem : EquipableItem, IModifierProvider
