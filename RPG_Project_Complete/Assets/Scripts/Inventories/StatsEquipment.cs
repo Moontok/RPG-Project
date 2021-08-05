@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using GameDevTV.Inventories;
 using RPG.Stats;
-using UnityEngine;
 
 namespace RPG.Inventories
 {

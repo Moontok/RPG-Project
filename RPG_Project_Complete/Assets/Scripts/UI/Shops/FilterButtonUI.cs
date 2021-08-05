@@ -1,5 +1,4 @@
-using System;
-using GameDevTV.Inventories;
+using RPG.Inventories;
 using RPG.Shops;
 using UnityEngine;
 using UnityEngine.UI;

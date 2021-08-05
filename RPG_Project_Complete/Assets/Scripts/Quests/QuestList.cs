@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
-using GameDevTV.Inventories;
 using RPG.Core;
+using RPG.Inventories;
 
 namespace RPG.Quests
 {
@@ -65,7 +65,7 @@ namespace RPG.Quests
         {
             foreach (var reward in quest.GetRewards())
             {
-                bool success = GetComponent<GameDevTV.Inventories.Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
+                bool success = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
                 if(!success)
                 {
                     GetComponent<ItemDropper>().DropItem(reward.item, reward.number);

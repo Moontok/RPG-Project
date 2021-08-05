@@ -5,9 +5,8 @@ using RPG.Saving;
 using RPG.Attributes;
 using RPG.Stats;
 using System.Collections.Generic;
-using GameDevTV.Utils;
-using System;
-using GameDevTV.Inventories;
+using RPG.Utils;
+using RPG.Inventories;
 
 namespace RPG.Combat
 {

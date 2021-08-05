@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using GameDevTV.Inventories;
-using RPG.Attributes;
+﻿using RPG.Attributes;
 using UnityEngine;
 
 namespace RPG.Inventories

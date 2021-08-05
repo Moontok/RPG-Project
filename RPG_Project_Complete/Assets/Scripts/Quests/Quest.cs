@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using GameDevTV.Inventories;
+﻿using System.Collections.Generic;
+using RPG.Inventories;
 using UnityEngine;
 
 namespace RPG.Quests

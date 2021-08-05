@@ -1,10 +1,10 @@
-﻿using GameDevTV.Utils;
-using RPG.Combat;
+﻿using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
 using RPG.Attributes;
 using UnityEngine;
 using System;
+using RPG.Utils;
 
 namespace RPG.Control
 {

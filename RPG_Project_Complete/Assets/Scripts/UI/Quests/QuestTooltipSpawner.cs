@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using GameDevTV.Core.UI.Tooltips;
-using RPG.Quests;
+﻿using RPG.Quests;
+using RPG.Utils.UI.Tooltips;
 using UnityEngine;
 
 namespace RPG.UI.Quests

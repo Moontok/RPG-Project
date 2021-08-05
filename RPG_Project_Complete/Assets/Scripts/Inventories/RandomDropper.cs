@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using GameDevTV.Inventories;
-using RPG.Stats;
+﻿using RPG.Stats;
 using UnityEngine;
 using UnityEngine.AI;
 

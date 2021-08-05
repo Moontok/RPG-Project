@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using RPG.Movement;
-using RPG.Combat;
 using RPG.Attributes;
 using System;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
-using GameDevTV.Inventories;
+using RPG.Inventories;
 
 namespace RPG.Control 
 {
