@@ -262,12 +262,15 @@ namespace GameDevTV.Inventories
     
         object ISaveable.CaptureState()
         {
+            print("Checking inventory to save...");
             var slotStrings = new InventorySlotRecord[inventorySize];
             for (int i = 0; i < inventorySize; i++)
             {
+                print("Checking state...");
                 if (slots[i].item != null)
                 {
                     slotStrings[i].itemID = slots[i].item.GetItemID();
+                    print("Storing state...");
                     slotStrings[i].number = slots[i].number;
                 }
             }
@@ -276,6 +279,7 @@ namespace GameDevTV.Inventories
 
         void ISaveable.RestoreState(object state)
         {
+            print("Loading...");
             var slotStrings = (InventorySlotRecord[])state;
             for (int i = 0; i < inventorySize; i++)
             {
