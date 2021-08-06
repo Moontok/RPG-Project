@@ -29,6 +29,8 @@ GameObject:
   - component: {fileID: 3431763455857601242}
   - component: {fileID: 3224202856690268082}
   - component: {fileID: 2270213568111513313}
+  - component: {fileID: 1734750014382858067}
+  - component: {fileID: 1079695315765265848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -288,6 +290,7 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 71c06df75eee7124f8ab8e39ce242adc, type: 3}
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
+  numberOfAbilities: 6
 --- !u!114 &8759279735560189445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +405,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingBalance: 400
+--- !u!114 &1734750014382858067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647553908357431780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8059fc4161bf6bb49a02f9519c961c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1079695315765265848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647553908357431780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd889d9759c4c94daff84aa8e2bcb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 150
 --- !u!1 &2171779761945979921
 GameObject:
   m_ObjectHideFlags: 0

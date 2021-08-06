@@ -1,6 +1,8 @@
-﻿using RPG.Inventories;
+﻿using RPG.Abilities;
+using RPG.Inventories;
 using RPG.Utils.UI.Dragging;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPG.UI.Inventories
 {
@@ -12,15 +14,25 @@ namespace RPG.UI.Inventories
         // CONFIG DATA
         [SerializeField] InventoryItemIcon icon = null;
         [SerializeField] int index = 0;
+        [SerializeField] Image cooldownOverlay = null;
 
         // CACHE
-        ActionStore store;
+        ActionStore store = null;
+        CooldownStore cooldownStore = null;
 
         // LIFECYCLE METHODS
-        private void Awake()
+        void Awake()
         {
-            store = GameObject.FindGameObjectWithTag("Player").GetComponent<ActionStore>();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            store = player.GetComponent<ActionStore>();
+            cooldownStore = player.GetComponent<CooldownStore>();
+
             store.storeUpdated += UpdateIcon;
+        }
+
+        void Update()
+        {
+            cooldownOverlay.fillAmount = cooldownStore.GetFractionRemaining(GetItem());
         }
 
         // PUBLIC

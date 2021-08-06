@@ -36,7 +36,6 @@ namespace RPG.Control
 
         void Update()
         {
-            CheckSpecialAbilityKeys();
             if (InteractWithUI()) return;
             if (health.IsDead()) 
             {
@@ -52,33 +51,9 @@ namespace RPG.Control
             SetCursor(CursorType.None);
         }
 
-        private void CheckSpecialAbilityKeys()
+        public static Ray GetMouseRay()
         {
-            var actionStore = GetComponent<ActionStore>();
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                actionStore.Use(0, gameObject);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                actionStore.Use(1, gameObject);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                actionStore.Use(2, gameObject);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                actionStore.Use(3, gameObject);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha5))
-            {
-                actionStore.Use(4, gameObject);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha6))
-            {
-                actionStore.Use(5, gameObject);
-            }
+            return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
 
         private bool InteractWithUI()
@@ -195,11 +170,6 @@ namespace RPG.Control
                 }                
             }
             return cursorMappings[0];
-        }
-
-        private static Ray GetMouseRay()
-        {
-            return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
     }
 }

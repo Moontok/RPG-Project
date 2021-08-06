@@ -27,6 +27,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopName: 
+  sellingPenaltyPercentage: 20
+  stockConfig: []
 --- !u!1001 &61376713418423382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,6 +105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shop Keeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163406763042811041, guid: 2bff11d9dfc3685418e51babedca5971,
+        type: 3}
+      propertyPath: m_TagString
+      value: ShopKeeper
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8559691094548668725, guid: 2bff11d9dfc3685418e51babedca5971, type: 3}

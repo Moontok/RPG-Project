@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectives:
   - reference: 1
-    description: Talk to the guard on the bridge.
+    description: Find the sword on the bridge.
   rewards:
   - number: 1
     item: {fileID: 11400000, guid: 6c89fd4b4b7d8e542a7579e83d3f8666, type: 2}

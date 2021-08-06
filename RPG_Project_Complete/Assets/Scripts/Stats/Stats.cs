@@ -6,6 +6,9 @@ namespace RPG.Stats
         ExperienceReward,
         ExperienceToLevelUp,
         Damage,
-        AttackSpeed
+        AttackSpeed,
+        Mana,
+        ManaRegenRate,
+        HealthRegenRate
     }
 }
