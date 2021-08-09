@@ -10,23 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efceea7b2c0725d4382016565a134464, type: 3}
-  m_Name: Ability Acid Splash
+  m_Name: Aiblity Homing Fireballs
   m_EditorClassIdentifier: 
-  itemID: 8fe0ff99-a82d-43a9-9692-d89af7d97e79
-  displayName: Acid Splash
-  description: Cause AOE acid splash damage over time.
-  icon: {fileID: 21300000, guid: fdd7e081e488a8f46b039fbf620b466b, type: 3}
-  pickup: {fileID: 5579120515323433686, guid: 495ab42f5c4a9ff4199310213d6e8b02, type: 3}
+  itemID: 32d5d5d7-e0ef-4735-a4a2-d2e9de20f253
+  displayName: Fire Spray
+  description: Launches a fireball at  up to 3 targets.
+  icon: {fileID: 21300000, guid: b6a0bbabd7933dd4e9e10fcdbb61b99a, type: 3}
+  pickup: {fileID: 5579120515323433686, guid: 9eb971571590e784ea99bdea957190ab, type: 3}
   stackable: 0
-  price: 50
+  price: 100
   category: 5
   consumable: 0
   targetingStrategy: {fileID: 11400000, guid: f014b6e05640a2447a0c31ff2e2d24a8, type: 2}
   filterStrategies:
   - {fileID: 11400000, guid: 3370083910b286e4e843408f63c538e9, type: 2}
   effectStrategies:
-  - {fileID: 11400000, guid: 20088bdef2279254fb6f7fa07a7b491a, type: 2}
-  - {fileID: 11400000, guid: ced5a96a072b40146ad8b0ed8751f07c, type: 2}
-  - {fileID: 11400000, guid: 8437fb0bae74deb4daf83cdbfc0f0c6e, type: 2}
-  cooldownTime: 2
-  manaCost: 20
+  - {fileID: 11400000, guid: 2e1eeeca5d1b0474e8e8df5b86d6314e, type: 2}
+  cooldownTime: 5
+  manaCost: 40

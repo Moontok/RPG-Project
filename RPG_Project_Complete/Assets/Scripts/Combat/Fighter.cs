@@ -74,6 +74,17 @@ namespace RPG.Combat
             currentWeapon = AttachWeapon(weapon);
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+
+        public Transform GetHandTransform(bool isRightHand)
+        {
+            if (isRightHand) { return rightHandTransform; }
+            else { return leftHandTransform; }
+        }
+
         private void UpdateWeapon()
         {
             var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
@@ -91,11 +102,6 @@ namespace RPG.Combat
         {
             Animator animator = this.GetComponent<Animator>();
             return weapon.Spawn(rightHandTransform, leftHandTransform, animator);
-        }
-
-        public Health GetTarget()
-        {
-            return target;
         }
 
         private void AttackBehavior()

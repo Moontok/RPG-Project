@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using RPG.Attributes;
+using RPG.Core;
 using RPG.Inventories;
 using UnityEngine;
 
@@ -23,11 +23,17 @@ namespace RPG.Abilities
             if (cooldownStore.GetTimeRemaining(this) > 0) { return; }
 
             AbilityData data = new AbilityData(user);
+
+            ActionScheduler actionScheduler = user.GetComponent<ActionScheduler>();
+            actionScheduler.StartAction(data);
+
             targetingStrategy.StartTargeting(data, () => TargetAcquired(data));
         }
 
         private void TargetAcquired(AbilityData data)
         {
+            if (data.IsCancelled()) { return; }
+
             Mana mana = data.GetUser().GetComponent<Mana>();
             if (!mana.UseMana(manaCost)) { return; }
 

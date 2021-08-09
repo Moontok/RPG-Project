@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb8d1b720d888c43b9a9b76cf0bd836, type: 3}
+  m_Name: Delayed Effects Acid Splash
+  m_EditorClassIdentifier: 
+  delay: 0.53
+  delayedEffects:
+  - {fileID: 11400000, guid: fbf8be9aea8fec54b91c9cd2b3fb3df0, type: 2}
+  - {fileID: 11400000, guid: b8dc9e0411bf0bc498d62f578a9e2e84, type: 2}

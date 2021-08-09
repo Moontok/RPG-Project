@@ -10,8 +10,8 @@ namespace RPG.Abilities.Targeting
     public class DelayedClickTargeting : TargetingStrategy
     {
         [SerializeField] Texture2D cursorTexture = null;
-        [SerializeField] Vector2 cursorHotspot = new Vector2();
-        [SerializeField] LayerMask layerMask = new LayerMask();
+        [SerializeField] Vector2 cursorHotspot = default;
+        [SerializeField] LayerMask layerMask = default;
         [SerializeField] float areaOfEffectRadius = 0f;
         [SerializeField] Transform targetingPrefab = null;
 
@@ -37,8 +37,14 @@ namespace RPG.Abilities.Targeting
 
             targetingPrefabInstance.localScale = new Vector3(areaOfEffectRadius * 2, 1f, areaOfEffectRadius * 2);
 
-            while (true)
+            while (!data.IsCancelled())
             {
+                if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.Escape))
+                {
+                    data.Cancel();
+                    break;
+                }
+
                 Cursor.SetCursor(cursorTexture, cursorHotspot, CursorMode.Auto);
                 RaycastHit raycastHit = new RaycastHit();
 
@@ -50,17 +56,16 @@ namespace RPG.Abilities.Targeting
                     {
                         // Wait until the player stops clicking to avoid moving.
                         yield return new WaitWhile(() => Input.GetMouseButton(0));
-
-                        playerController.enabled = true;
-                        targetingPrefabInstance.gameObject.SetActive(false);
                         data.SetTargetedPoint(raycastHit.point);
                         data.SetTargets(GetGameObjectsInRadius(raycastHit.point));
-                        finished();
-                        yield break;
+                        break;
                     }
                 }
                 yield return null;
             }
+            targetingPrefabInstance.gameObject.SetActive(false);
+            playerController.enabled = true;
+            finished();
         }
 
         private IEnumerable<GameObject> GetGameObjectsInRadius(Vector3 point)
