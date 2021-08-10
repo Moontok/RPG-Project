@@ -12,6 +12,7 @@ namespace RPG.Shops
     {
         [SerializeField] string shopName = "";
         [Range(0, 100)][SerializeField] float sellingPenaltyPercentage = 20f;
+        [SerializeField] float maximumBarterDiscount = 20f;
 
         [SerializeField] StockItemConfig[] stockConfig = null;        
 
@@ -161,8 +162,6 @@ namespace RPG.Shops
                     }
                 }
             }
-            // Removal from transaction
-            // Debting or Crediting of funds
 
             if (onChange != null)
             {
@@ -255,7 +254,7 @@ namespace RPG.Shops
                 {
                     if (!prices.ContainsKey(config.item))
                     {
-                        prices[config.item] = config.item.GetPrice();
+                        prices[config.item] = config.item.GetPrice() * GetBarterDiscount();
                     }
                     prices[config.item]  *= (1 - config.buyingDiscountPercentage / 100);
                 }
@@ -266,6 +265,13 @@ namespace RPG.Shops
             }
 
             return prices;            
+        }
+
+        private float GetBarterDiscount()
+        {
+            BaseStats baseStats = currentShopper.GetComponent<BaseStats>();
+            float discount = baseStats.GetStat(Stat.BuyingDiscountPercentage);
+            return ( 1 - Mathf.Min(discount, maximumBarterDiscount) / 100);
         }
 
         private Dictionary<InventoryItem, int> GetAvailabilities()

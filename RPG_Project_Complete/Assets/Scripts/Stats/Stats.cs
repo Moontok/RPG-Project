@@ -9,6 +9,8 @@ namespace RPG.Stats
         AttackSpeed,
         Mana,
         ManaRegenRate,
-        HealthRegenRate
+        HealthRegenRate,
+        TotalTraitPoints,
+        BuyingDiscountPercentage
     }
 }

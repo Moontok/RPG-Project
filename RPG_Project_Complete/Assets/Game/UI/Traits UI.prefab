@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7430265927248238771}
   - component: {fileID: 7011612569504089924}
+  - component: {fileID: 8378146663436312712}
   m_Layer: 5
   m_Name: Traits UI
   m_TagString: Untagged
@@ -51,6 +52,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggleKey: 116
   uiContainer: {fileID: 4121465614145389454}
+--- !u!114 &8378146663436312712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269886732131074299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3475267817a15e644a864dd7357b554e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unassignedPointsText: {fileID: 6630774644283699681}
+  commitButton: {fileID: 3077229105454986956}
 --- !u!1 &4121465614145389454
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +244,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 809335199402936240}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3077229105454986956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2418386279839494524, guid: e9374894685fb6e4eb139cbff56e8564,
+    type: 3}
+  m_PrefabInstance: {fileID: 809335199402936240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1633152714204639567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 366318962075571981, guid: 2eb127cb7fc0861448ffec34d8511d15,
         type: 3}
       propertyPath: m_text
-      value: Stamina
+      value: Constitution
       objectReference: {fileID: 0}
     - target: {fileID: 4682802043294177127, guid: 2eb127cb7fc0861448ffec34d8511d15,
         type: 3}
@@ -605,6 +632,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791079429526049826, guid: 2eb127cb7fc0861448ffec34d8511d15,
+        type: 3}
+      propertyPath: trait
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eb127cb7fc0861448ffec34d8511d15, type: 3}
@@ -764,6 +796,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3321537476731723920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6630774644283699681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8222806375199117681, guid: 0c92ad26ae18114419286a54d6d3f3f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3321537476731723920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4951213451073068386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -887,6 +931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791079429526049826, guid: 2eb127cb7fc0861448ffec34d8511d15,
+        type: 3}
+      propertyPath: trait
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eb127cb7fc0861448ffec34d8511d15, type: 3}
@@ -1178,6 +1227,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8791079429526049826, guid: 2eb127cb7fc0861448ffec34d8511d15,
+        type: 3}
+      propertyPath: trait
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eb127cb7fc0861448ffec34d8511d15, type: 3}
 --- !u!224 &4022966800742185667 stripped
@@ -1307,6 +1361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791079429526049826, guid: 2eb127cb7fc0861448ffec34d8511d15,
+        type: 3}
+      propertyPath: trait
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eb127cb7fc0861448ffec34d8511d15, type: 3}

@@ -11,10 +11,8 @@ namespace RPG.Combat
     {
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] Weapon equippedPrefab = null;
-        //[SerializeField] float weaponDamage = 5f;
-        [SerializeField] float percentageDamageBonus = 0f;
         [SerializeField] float weaponRange = 2f;
-        [SerializeField] float weapopnAttackSpeed = 1f;
+        [SerializeField] float weaponAttackSpeed = 1f;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
 
@@ -30,8 +28,6 @@ namespace RPG.Combat
             public Stat stat;
             public float value;
         }
-
-        float weaponDamage = 0f;
         //End Adding
 
         const string weaponName = "Weapon";
@@ -91,16 +87,6 @@ namespace RPG.Combat
             projectileInstance.SetTarget(target, instigator, calculatedDamage);
         }
 
-        public float GetDamage()
-        {
-            return weaponDamage;
-        }
-
-        public float GetPercentageDamageBonus()
-        {
-            return percentageDamageBonus;
-        }
-
         public float GetRange()
         {
             return weaponRange;
@@ -108,7 +94,7 @@ namespace RPG.Combat
 
         public float GetAttackSpeed()
         {
-            return weapopnAttackSpeed;
+            return weaponAttackSpeed;
         }
 
         public IEnumerable<float> GetAdditiveModifiers(Stat stat)
@@ -130,24 +116,7 @@ namespace RPG.Combat
                 {
                     yield return modifier.value;
                 }
-            }
-            
-        }        
-
-        // public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-        // {
-        //     if (stat == Stat.Damage)
-        //     {
-        //         yield return weaponDamage;
-        //     }
-        // }
-
-        // public IEnumerable<float> GetPercentageModifiers(Stat stat)
-        // {
-        //     if (stat == Stat.Damage)
-        //     {
-        //         yield return percentageDamageBonus;
-        //     }
-        // }
+            }            
+        }
     }
 }
