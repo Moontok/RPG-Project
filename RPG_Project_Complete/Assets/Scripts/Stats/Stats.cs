@@ -11,6 +11,7 @@ namespace RPG.Stats
         ManaRegenRate,
         HealthRegenRate,
         TotalTraitPoints,
-        BuyingDiscountPercentage
+        BuyingDiscountPercentage,
+        Defense
     }
 }

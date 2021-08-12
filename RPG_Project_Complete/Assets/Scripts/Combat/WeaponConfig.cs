@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace RPG.Combat
 {
-    [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make NewWeapon", order = 0)]
+    [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
     public class WeaponConfig : EquipableItem, IModifierProvider
     {
         [SerializeField] AnimatorOverrideController animatorOverride = null;
@@ -14,13 +14,9 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float weaponAttackSpeed = 1f;
         [SerializeField] bool isRightHanded = true;
-        [SerializeField] Projectile projectile = null;
-
-        //Added        
-        [SerializeField]
-        Modifiers[] additiveModifiers = null;
-        [SerializeField]
-        Modifiers[] percentageModifiers = null;
+        [SerializeField] Projectile projectile = null;       
+        [SerializeField] Modifiers[] additiveModifiers = null;
+        [SerializeField] Modifiers[] percentageModifiers = null;
 
         [System.Serializable]
         struct Modifiers
@@ -28,7 +24,6 @@ namespace RPG.Combat
             public Stat stat;
             public float value;
         }
-        //End Adding
 
         const string weaponName = "Weapon";
 

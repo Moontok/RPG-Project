@@ -10,12 +10,15 @@ using RPG.Inventories;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
 
+// TODO: Debug mode
+        [SerializeField] float autoAttackRange = 4f;
+// End Debug Mode
         Health target = null;
         Equipment equipment = null;
         float timeSinceLastAttack = Mathf.Infinity;
@@ -54,8 +57,17 @@ namespace RPG.Combat
         {
             timeSinceLastAttack += Time.deltaTime;
 
-            if(target == null) return;
-            if(target.IsDead()) return;
+            if(target == null) { return; }
+            // Normal mode: no auto attack
+            //if(target.IsDead()) { return; }
+            
+// TODO: Debug mode: Auto attack 
+            if (target.IsDead())
+            {
+                target = FindNewTargetInRange();
+                if (target == null) { return; }
+            }
+// End Debug Mode
 
             if (!GetIsInRange(target.transform))
             {
@@ -127,6 +139,12 @@ namespace RPG.Combat
             if (target == null) return;
 
             float damage = this.GetComponent<BaseStats>().GetStat(Stat.Damage);
+            BaseStats targetBaseStats = target.GetComponent<BaseStats>();
+            if (targetBaseStats != null)
+            {
+                float defense = targetBaseStats.GetStat(Stat.Defense);
+                damage /= 1 + defense / damage;
+            }
 
             if (currentWeapon != null) currentWeapon.OnHit();
 
@@ -178,16 +196,38 @@ namespace RPG.Combat
             this.GetComponent<Animator>().SetTrigger("stopAttack");
         }
 
-        public object CaptureState()
+// TODO: Debug mode
+        private Health FindNewTargetInRange()
         {
-            return currentWeaponConfig.name;
+            Health best = null;
+            float bestDistance = Mathf.Infinity;
+
+            foreach (var candidate in FindAllTargetsInRange())
+            {
+                float candidateDistance = Vector3.Distance(this.transform.position, candidate.transform.position);
+                if (candidateDistance < bestDistance)
+                {
+                    best = candidate;
+                    bestDistance = candidateDistance;
+                }
+            }
+            return best;
         }
 
-        public void RestoreState(object state)
+        private IEnumerable<Health> FindAllTargetsInRange()
         {
-            string weaponName = (string)state;
-            WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
-            EquipWeapon(weapon);
+            RaycastHit[] raycastHits = Physics.SphereCastAll(this.transform.position, autoAttackRange, Vector3.up, 0);
+
+            foreach (var hit in raycastHits)
+            {
+                Health health = hit.transform.GetComponent<Health>();
+                if (health == null) { continue; }
+                if (health.IsDead()) { continue; }
+                if (health.gameObject == this.gameObject) { continue; }
+                yield return health;
+            }
+
         }
+// End Debug Mode
     }
 }
