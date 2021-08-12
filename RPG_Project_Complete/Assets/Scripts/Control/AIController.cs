@@ -5,6 +5,7 @@ using RPG.Attributes;
 using UnityEngine;
 using System;
 using RPG.Utils;
+using UnityEngine.AI;
 
 namespace RPG.Control
 {
@@ -24,17 +25,11 @@ namespace RPG.Control
         Mover mover = null;
         GameObject player = null;
 
+        LazyValue<Vector3> guardPosition = null;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceArrivedAtWaypoint = Mathf.Infinity;
         float timeSinceAggravated = Mathf.Infinity;
         int currentWaypointIndex = 0;
-
-        LazyValue<Vector3> _guardPosition = null;
-        public Vector3 guardPosition
-        {
-            get {return _guardPosition.value;}
-            set {_guardPosition.value = value;}
-        }
 
         private void Awake() 
         {
@@ -43,7 +38,19 @@ namespace RPG.Control
             mover = this.GetComponent<Mover>();
             player = GameObject.FindWithTag("Player");
 
-            _guardPosition = new LazyValue<Vector3>(GetGuardPosition);            
+            guardPosition = new LazyValue<Vector3>(GetGuardPosition); 
+            guardPosition.ForceInit();           
+        }
+
+        public void Reset()
+        {
+            NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+            navMeshAgent.Warp(guardPosition.value);
+            
+            timeSinceLastSawPlayer = Mathf.Infinity;
+            timeSinceArrivedAtWaypoint = Mathf.Infinity;
+            timeSinceAggravated = Mathf.Infinity;
+            currentWaypointIndex = 0;
         }
 
         private Vector3 GetGuardPosition()
@@ -53,7 +60,7 @@ namespace RPG.Control
 
         private void Start() 
         {
-            _guardPosition.ForceInit();
+            guardPosition.ForceInit();
         }
 
         private void Update()
@@ -80,10 +87,6 @@ namespace RPG.Control
         {
             timeSinceAggravated = 0;
         }
-        // public void ResetAggravate()
-        // {
-        //     timeSinceAggravated = Mathf.Infinity;
-        // }
 
         private void UpdateTimers()
         {
@@ -94,7 +97,7 @@ namespace RPG.Control
 
         private void PatrolBehavior()
         {
-            Vector3 nextPosition = guardPosition;
+            Vector3 nextPosition = guardPosition.value;
 
             if (patrolPath != null)
             {

@@ -2,7 +2,6 @@ using RPG.SceneManagement;
 using RPG.Utils;
 using UnityEngine;
 using TMPro;
-using System;
 
 namespace RPG.UI
 {
@@ -27,8 +26,17 @@ namespace RPG.UI
             savingWrapper.value.ContinueGame();
         }
 
-        private SavingWrapper GetSavingWrapper()
+        public void QuitGame()
         {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else 
+            Application.Quit();
+#endif
+        }
+
+        private SavingWrapper GetSavingWrapper()
+        {            
             return FindObjectOfType<SavingWrapper>();
         }
     }    

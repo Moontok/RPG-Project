@@ -56,6 +56,11 @@ namespace RPG.Control
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
 
+        public void ResetCursor()
+        {
+            SetCursor(CursorType.UI);
+        }
+
         private bool InteractWithUI()
         {
             if (Input.GetMouseButtonUp(0))
@@ -107,7 +112,7 @@ namespace RPG.Control
             return false;
         }
 
-        RaycastHit[] RaycastAllSorted()
+        private RaycastHit[] RaycastAllSorted()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             float[] distances = new float[hits.Length];
