@@ -32,7 +32,7 @@ namespace RPG.UI.Inventories
             return 0;
         }
 
-        public void AddItems(InventoryItem item, int number)
+        public void AddItemsByDragging(InventoryItem item, int number)
         {
             if (number > 0)
             {

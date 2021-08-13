@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6811048472084803346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 215ff968-043b-4768-81d8-b94e4c962187
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You look a little weak to challenge them.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 594
+    y: 139
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: MinimumTrait
+        parameters:
+        - Strength
+        - 3
+        negate: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb48511ccbec3424ca706f93506cecc7, type: 3}
+  m_Name: Warning - High Road
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 5132079813073159426}
+  - {fileID: -6811048472084803346}
+  - {fileID: 8505523289671383842}
+  - {fileID: 2333702355467342205}
+--- !u!114 &2333702355467342205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 601eb2fe-aaae-43f5-bc4d-fb9ba3fd2776
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Wow! You look ready to take them on! One looks stronger than the others.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 583
+    y: 370
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasItemEquipped
+        parameters:
+        - 06148f59-bf91-4796-b3bb-a5a91dac888f
+        negate: 0
+--- !u!114 &5132079813073159426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 09d15429-83f4-40e9-ac2a-888f1324bc03
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: There is a strong group of enemy soldiers on High Road.
+  children:
+  - 215ff968-043b-4768-81d8-b94e4c962187
+  - abf584fa-edae-4a3c-b70a-da69f33ab2e7
+  - 601eb2fe-aaae-43f5-bc4d-fb9ba3fd2776
+  rect:
+    serializedVersion: 2
+    x: 217
+    y: 213
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8505523289671383842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: abf584fa-edae-4a3c-b70a-da69f33ab2e7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You look strong, but you might want a better weapon.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 589
+    y: 250
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: MinimumTrait
+        parameters:
+        - Strength
+        - 3
+        negate: 0
+    - or:
+      - predicate: HasItemEquipped
+        parameters:
+        - 06148f59-bf91-4796-b3bb-a5a91dac888f
+        negate: 1

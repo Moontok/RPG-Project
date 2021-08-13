@@ -121,12 +121,12 @@ namespace RPG.Utils.UI.Dragging
             // Do take backs (if needed)
             if (sourceTakeBackNumber > 0)
             {
-                source.AddItems(removedSourceItem, sourceTakeBackNumber);
+                source.AddItemsByDragging(removedSourceItem, sourceTakeBackNumber);
                 removedSourceNumber -= sourceTakeBackNumber;
             }
             if (destinationTakeBackNumber > 0)
             {
-                destination.AddItems(removedDestinationItem, destinationTakeBackNumber);
+                destination.AddItemsByDragging(removedDestinationItem, destinationTakeBackNumber);
                 removedDestinationNumber -= destinationTakeBackNumber;
             }
 
@@ -136,19 +136,19 @@ namespace RPG.Utils.UI.Dragging
                 destination.MaxAcceptable(removedSourceItem) == 0 ||
                 source.MaxAcceptable(removedSourceItem) == 0)
             {
-                destination.AddItems(removedDestinationItem, removedDestinationNumber);
-                source.AddItems(removedSourceItem, removedSourceNumber);
+                destination.AddItemsByDragging(removedDestinationItem, removedDestinationNumber);
+                source.AddItemsByDragging(removedSourceItem, removedSourceNumber);
                 return;
             }
 
             // Do swaps
             if (removedDestinationNumber > 0)
             {
-                source.AddItems(removedDestinationItem, removedDestinationNumber);
+                source.AddItemsByDragging(removedDestinationItem, removedDestinationNumber);
             }
             if (removedSourceNumber > 0)
             {
-                destination.AddItems(removedSourceItem, removedSourceNumber);
+                destination.AddItemsByDragging(removedSourceItem, removedSourceNumber);
             }
         }
 
@@ -163,7 +163,7 @@ namespace RPG.Utils.UI.Dragging
             if (toTransfer > 0)
             {
                 source.RemoveItems(toTransfer);
-                destination.AddItems(draggingItem, toTransfer);
+                destination.AddItemsByDragging(draggingItem, toTransfer);
                 return false;
             }
 

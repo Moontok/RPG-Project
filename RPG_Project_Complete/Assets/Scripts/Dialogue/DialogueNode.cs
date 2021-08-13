@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using RPG.Core;
+﻿using System.Collections.Generic;
+using RPG.Utils;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +8,7 @@ namespace RPG.Dialogue
     public class DialogueNode : ScriptableObject
     {
         [SerializeField] bool isPlayerSpeaking = false;
-        [SerializeField] string text = "";
+        [TextArea] [SerializeField] string text = "";
         [SerializeField] List<string> children = new List<string>();
         [SerializeField] Rect rect = new Rect(0, 0, 200, 100);
         [SerializeField] string onEnterAction = "";

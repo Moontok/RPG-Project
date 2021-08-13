@@ -12,7 +12,7 @@ namespace RPG.UI.Inventories
     /// </summary>
     public class InventoryDropTarget : MonoBehaviour, IDragDestination<InventoryItem>
     {
-        public void AddItems(InventoryItem item, int number)
+        public void AddItemsByDragging(InventoryItem item, int number)
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<ItemDropper>().DropItem(item, number);

@@ -1,0 +1,482 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9088474981274963578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 33f7f0e5-9b77-4617-aa32-a0deb4ceffe8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: No, I am not sure if even I could take this Dark Dragon cult group.
+  children:
+  - 74a5a7a9-31a4-4e5d-af04-4b8feb492152
+  rect:
+    serializedVersion: 2
+    x: 1374
+    y: 275
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-7901423515358024219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: f84683b1-4f62-4a7a-aa39-17a2e9f9b415
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh what terrible times it is!
+  children:
+  - e9b36c8d-155c-4dc9-b005-32daac26d76f
+  - 366a4e15-d8be-4fec-82d8-796b11c96ae1
+  - 7cfd4507-a7e7-4ecf-9c2d-9df77f7a14ac
+  rect:
+    serializedVersion: 2
+    x: 627
+    y: 286
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Dark Night of the Dark Knight
+        negate: 1
+--- !u!114 &-6722141184532434293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: f69fab95-8d84-41f2-a565-8539362b5d5f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: I am to weak to avenge my family. I wish someone would come along and avenge
+    my family. Wait! You look like you might be capable in helping me out with the
+    problem! What do you say? I will give you my life savings for this deed!
+  children:
+  - 5ae99593-257b-4198-8aa4-9732fc30b059
+  - 33f7f0e5-9b77-4617-aa32-a0deb4ceffe8
+  rect:
+    serializedVersion: 2
+    x: 1145
+    y: 237
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5443711483569851082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: e9b36c8d-155c-4dc9-b005-32daac26d76f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: What's the matter?
+  children:
+  - f9bca8a9-ffeb-4840-b930-154650e3035b
+  rect:
+    serializedVersion: 2
+    x: 876
+    y: 94
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-4825538140040494936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 37d37adc-5adc-4408-8c77-de3b6611cbe3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You haven't taken out the Dark Dragon cult region leader.
+  children:
+  - 79f55c86-1113-4158-96f9-f9ec10cac74f
+  rect:
+    serializedVersion: 2
+    x: 374
+    y: 450
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Dark Night of the Dark Knight
+        negate: 0
+    - or:
+      - predicate: CompleteQuest
+        parameters:
+        - Dark Night of the Dark Knight
+        negate: 1
+--- !u!114 &-1571974414100112319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 366a4e15-d8be-4fec-82d8-796b11c96ae1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Indeed it is...
+  children:
+  - f9bca8a9-ffeb-4840-b930-154650e3035b
+  rect:
+    serializedVersion: 2
+    x: 885
+    y: 198
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-901371194770884146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: abbd75eb-7540-4cf9-9d67-70daa48e3959
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I have taken care of the Dark Dragon cult leader in this area.
+  children:
+  - b58f5ccf-0df2-48de-97aa-d6c399891006
+  rect:
+    serializedVersion: 2
+    x: 367
+    y: 564
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Dark Night of the Dark Knight
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Dark Night of the Dark Knight
+        negate: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb48511ccbec3424ca706f93506cecc7, type: 3}
+  m_Name: Quest Giver
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 4159464458255621102}
+  - {fileID: 2210973583422570712}
+  - {fileID: -7901423515358024219}
+  - {fileID: -5443711483569851082}
+  - {fileID: -1571974414100112319}
+  - {fileID: 1675878829426474243}
+  - {fileID: -4825538140040494936}
+  - {fileID: 3570020432607283722}
+  - {fileID: -901371194770884146}
+  - {fileID: 722567451842419328}
+  - {fileID: 2590261248665987787}
+  - {fileID: -6722141184532434293}
+  - {fileID: 2425624802319384822}
+  - {fileID: -9088474981274963578}
+  - {fileID: 2014794868791364096}
+  - {fileID: 1698396204248622514}
+--- !u!114 &722567451842419328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: b58f5ccf-0df2-48de-97aa-d6c399891006
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Thank you! I can't believe you actually avenged my family!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 618
+    y: 576
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1675878829426474243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 7cfd4507-a7e7-4ecf-9c2d-9df77f7a14ac
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: That is very sad. I better be going.
+  children:
+  - 74a5a7a9-31a4-4e5d-af04-4b8feb492152
+  rect:
+    serializedVersion: 2
+    x: 895
+    y: 296
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1698396204248622514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 74a5a7a9-31a4-4e5d-af04-4b8feb492152
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh, I see. I guess this day continues to be terrible...
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1669
+    y: 397
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2014794868791364096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: e2fb4ccf-b988-4dfd-a266-39764c6adcef
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Thank you! May luck be with your!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1671
+    y: 127
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2210973583422570712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 21f72f4d-9a80-4ea0-8ac3-46a4fb9d7184
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Hello to you!
+  children:
+  - f84683b1-4f62-4a7a-aa39-17a2e9f9b415
+  rect:
+    serializedVersion: 2
+    x: 376
+    y: 308
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Dark Night of the Dark Knight
+        negate: 1
+--- !u!114 &2425624802319384822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 5ae99593-257b-4198-8aa4-9732fc30b059
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Yes, I will see what I can do.
+  children:
+  - e2fb4ccf-b988-4dfd-a266-39764c6adcef
+  rect:
+    serializedVersion: 2
+    x: 1379
+    y: 122
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
+  condition:
+    and: []
+--- !u!114 &2590261248665987787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: f9bca8a9-ffeb-4840-b930-154650e3035b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: A group of Dragon Cult members in High Road ambushed my family and I as we
+    were traveling to Darkwater village. They slayed my wife and son, but I barely
+    managed to get away.
+  children:
+  - f69fab95-8d84-41f2-a565-8539362b5d5f
+  rect:
+    serializedVersion: 2
+    x: 1114
+    y: 113
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3570020432607283722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 79f55c86-1113-4158-96f9-f9ec10cac74f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: What are you waiting for!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 903
+    y: 468
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4159464458255621102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: e72ec746-d368-436d-bcc6-c02f20595e25
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Greetings wander!
+  children:
+  - 21f72f4d-9a80-4ea0-8ac3-46a4fb9d7184
+  - abbd75eb-7540-4cf9-9d67-70daa48e3959
+  - 37d37adc-5adc-4408-8c77-de3b6611cbe3
+  rect:
+    serializedVersion: 2
+    x: 119
+    y: 322
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

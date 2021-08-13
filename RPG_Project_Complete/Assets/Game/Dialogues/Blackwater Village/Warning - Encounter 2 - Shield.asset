@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8884325566065853512
+--- !u!114 &-9072799792166293538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,22 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: 5ed288cf-68fd-44cb-afc2-a4c946d2c117
+  m_Name: 64b3b27d-0cf9-4fc8-a280-af26baf448ea
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: THANKS! I didn't think I would get it back.
-  children: []
+  text: Wow! You really showed those brutes!
+  children:
+  - 26177e5c-b8e3-4239-8cfb-fa529d09fa5f
+  - 24f12f69-04de-464b-9c82-833e73c0e8ef
+  - b46a25ca-4720-4fec-96d8-7e05987e6f09
   rect:
     serializedVersion: 2
-    x: 822
-    y: 523
+    x: 5
+    y: 358
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
     and: []
---- !u!114 &-8658314597359464801
+--- !u!114 &-8458115264792031303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35,68 +38,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: 206ff057-78bb-4df5-ac6a-3551321b3a4b
+  m_Name: a1546f12-d163-4bc2-a3d1-a7566303d985
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: Isn't it on your back?
+  isPlayerSpeaking: 0
+  text: I was going to mention that shield you have on, but it seems you already
+    found it. Good luck!
   children:
-  - 3892323e-0977-4e87-9280-02ff832310f0
+  - 8df02f91-5398-4e1b-84f4-116d9288cb25
   rect:
     serializedVersion: 2
-    x: 570
-    y: 223
-    width: 200
-    height: 100
-  onEnterAction: 
-  onExitAction: 
-  condition:
-    and: []
---- !u!114 &-7941007795818204088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: 0d2945de-ae8c-4a04-a2f1-a6b263ef9c50
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: Sounds like you are set!
-  children:
-  - fd698e55-c35e-408e-935a-fc87a5439bf4
-  rect:
-    serializedVersion: 2
-    x: 1089
-    y: 142
-    width: 200
-    height: 100
-  onEnterAction: 
-  onExitAction: 
-  condition:
-    and: []
---- !u!114 &-3616514979459367882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: a2d236f0-6f51-4854-8869-1ddf9cc2f26f
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: Do you want me to help you find it?
-  children:
-  - 91cfd707-c540-47cb-8484-8211fa187d27
-  rect:
-    serializedVersion: 2
-    x: 1070
-    y: 330
+    x: 1466
+    y: 326
     width: 200
     height: 100
   onEnterAction: 
@@ -104,47 +56,11 @@ MonoBehaviour:
   condition:
     and:
     - or:
-      - predicate: HasQuest
+      - predicate: HasEquippedItem
         parameters:
-        - Find the missing sword.
-        negate: 1
---- !u!114 &-2131368352731109855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: e675a2b1-768e-43d4-89db-d9a2682055d5
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: I am already on it!
-  children:
-  - b6e9d169-4946-41ea-b8e1-5f42bcd0dd29
-  rect:
-    serializedVersion: 2
-    x: 575
-    y: 364
-    width: 200
-    height: 100
-  onEnterAction: 
-  onExitAction: 
-  condition:
-    and:
-    - or:
-      - predicate: HasQuest
-        parameters:
-        - Find the missing sword.
+        - 2486f919-9417-4cab-9960-ddc7dde17639
         negate: 0
-    - or:
-      - predicate: CompletedQuest
-        parameters:
-        - Find the missing sword.
-        negate: 1
---- !u!114 &-2065527534037806726
+--- !u!114 &-5118354861885104420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,49 +70,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: c32f0324-eb64-4373-89b7-688e289f2cc1
+  m_Name: 33b99d21-3efa-4d1f-97bc-db16e82c80a2
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Oh, okay...
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 826
-    y: 69
-    width: 200
-    height: 100
-  onEnterAction: 
-  onExitAction: 
-  condition:
-    and: []
---- !u!114 &-1004264586294890702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: 3892323e-0977-4e87-9280-02ff832310f0
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: No, this is my backup sword.
+  text: You managed though.
   children:
-  - 0d2945de-ae8c-4a04-a2f1-a6b263ef9c50
-  - a2d236f0-6f51-4854-8869-1ddf9cc2f26f
+  - 5b783784-cba2-404a-801e-2db72fcca7f2
   rect:
     serializedVersion: 2
-    x: 820
-    y: 223
+    x: 494
+    y: 356
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
     and: []
---- !u!114 &-953700457056120529
+--- !u!114 &-2079640228621469501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,19 +96,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: 91cfd707-c540-47cb-8484-8211fa187d27
+  m_Name: 200074d9-2ef5-47ea-81be-e1b13c2a0027
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: That would be great! It is my favorite sword.
-  children: []
+  text: Ha! Lucky we all are!
+  children:
+  - c4adfdb0-e475-41fd-a941-b616f83fabd9
+  - a1546f12-d163-4bc2-a3d1-a7566303d985
   rect:
     serializedVersion: 2
-    x: 1320
-    y: 330
+    x: 1257
+    y: 242
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: GiveQuest
+  onExitAction: 
   condition:
     and: []
 --- !u!114 &11400000
@@ -231,23 +123,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb48511ccbec3424ca706f93506cecc7, type: 3}
-  m_Name: Lost Sword
+  m_Name: Warning - Encounter 2 - Shield
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 4515959806976321977}
-  - {fileID: 300591572958150582}
-  - {fileID: -8658314597359464801}
-  - {fileID: -1004264586294890702}
-  - {fileID: -7941007795818204088}
-  - {fileID: -3616514979459367882}
-  - {fileID: -953700457056120529}
-  - {fileID: -2131368352731109855}
-  - {fileID: 2575806309841842336}
-  - {fileID: 4283198635486136945}
-  - {fileID: -8884325566065853512}
-  - {fileID: -2065527534037806726}
-  - {fileID: 600033222342392426}
---- !u!114 &300591572958150582
+  - {fileID: -9072799792166293538}
+  - {fileID: 8404916264353358462}
+  - {fileID: 8423330749671169480}
+  - {fileID: 1636454146011764424}
+  - {fileID: 1791951883450175817}
+  - {fileID: 2462191819169885923}
+  - {fileID: 4027506800511303948}
+  - {fileID: -5118354861885104420}
+  - {fileID: 1081757840549450895}
+  - {fileID: 716572592448236677}
+  - {fileID: -2079640228621469501}
+  - {fileID: 5859266935613417183}
+  - {fileID: 5297709192210601484}
+  - {fileID: -8458115264792031303}
+  - {fileID: 3044834551323381832}
+--- !u!114 &716572592448236677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,23 +151,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: f526d36f-453e-418d-8ac5-4870dca498fa
+  m_Name: e18e8aa5-69d2-44a2-a6f9-01530f0aa912
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: Not my problem!
+  text: Just my luck! Well, I better be off.
   children:
-  - c32f0324-eb64-4373-89b7-688e289f2cc1
+  - 200074d9-2ef5-47ea-81be-e1b13c2a0027
   rect:
     serializedVersion: 2
-    x: 576
-    y: 69
+    x: 1100
+    y: 437
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
     and: []
---- !u!114 &600033222342392426
+--- !u!114 &1081757840549450895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,22 +177,126 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: fd698e55-c35e-408e-935a-fc87a5439bf4
+  m_Name: 7aedeb98-98dd-4960-92cd-3900bdb3e110
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Right...
+  text: Unfortunately there is. There is a group hanging out in the middle of town.
+  children:
+  - e18e8aa5-69d2-44a2-a6f9-01530f0aa912
+  rect:
+    serializedVersion: 2
+    x: 972
+    y: 219
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1636454146011764424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 24f12f69-04de-464b-9c82-833e73c0e8ef
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I barely made it out of that alive. What is going on?
+  children:
+  - 33b99d21-3efa-4d1f-97bc-db16e82c80a2
+  rect:
+    serializedVersion: 2
+    x: 265
+    y: 354
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1791951883450175817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 8937dc5c-cb45-405c-9d40-f39c71be178f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Are there more of them around?
+  children:
+  - 7aedeb98-98dd-4960-92cd-3900bdb3e110
+  rect:
+    serializedVersion: 2
+    x: 851
+    y: 437
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2462191819169885923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: b46a25ca-4720-4fec-96d8-7e05987e6f09
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: It was a smple task. Any idea what is going on?
+  children:
+  - a42e0684-7e6d-4213-82cc-dbcfc967df66
+  rect:
+    serializedVersion: 2
+    x: 265
+    y: 497
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3044834551323381832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 344f7217-1497-4f51-9ba2-34b7c7d6a373
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Farewell!
   children: []
   rect:
     serializedVersion: 2
-    x: 1339
-    y: 142
+    x: 1954
+    y: 270
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
     and: []
---- !u!114 &2575806309841842336
+--- !u!114 &4027506800511303948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,22 +306,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: b6e9d169-4946-41ea-b8e1-5f42bcd0dd29
+  m_Name: a42e0684-7e6d-4213-82cc-dbcfc967df66
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Oops, bad memory...
-  children: []
+  text: It seems that it was for you.
+  children:
+  - 5b783784-cba2-404a-801e-2db72fcca7f2
   rect:
     serializedVersion: 2
-    x: 821
-    y: 371
+    x: 470
+    y: 487
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
     and: []
---- !u!114 &4283198635486136945
+--- !u!114 &5297709192210601484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,16 +332,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: 0b8157c5-d9e4-4fa3-9602-a29a70c34b24
+  m_Name: c4adfdb0-e475-41fd-a941-b616f83fabd9
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: I found the sword!
+  isPlayerSpeaking: 0
+  text: By the way, I saw a shield across the way at the graveyard that might be
+    useful. A passing warrior seems to have left it after they paid their respects.
+    I haven't seen him in a while so you might want to go grab it to help out with
+    the Dark Cult members ahead.
   children:
-  - 5ed288cf-68fd-44cb-afc2-a4c946d2c117
+  - 8df02f91-5398-4e1b-84f4-116d9288cb25
   rect:
     serializedVersion: 2
-    x: 572
-    y: 523
+    x: 1466
+    y: 108
     width: 200
     height: 100
   onEnterAction: 
@@ -350,20 +352,11 @@ MonoBehaviour:
   condition:
     and:
     - or:
-      - predicate: HasQuest
+      - predicate: HasEquippedItem
         parameters:
-        - Find the missing sword.
-        negate: 0
-    - or:
-      - predicate: CompletedQuest
-        parameters:
-        - Find the missing sword.
-        negate: 0
-      - predicate: HasInventoryItem
-        parameters:
-        - 6d7abbaa-cacd-4001-99f6-2b86999e5207
-        negate: 0
---- !u!114 &4515959806976321977
+        - 2486f919-9417-4cab-9960-ddc7dde17639
+        negate: 1
+--- !u!114 &5859266935613417183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,19 +366,68 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
-  m_Name: 47466e8e-d7e3-4967-b4b3-849bd9778166
+  m_Name: 8df02f91-5398-4e1b-84f4-116d9288cb25
   m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: 'I have misplaced m'' sword! '
+  isPlayerSpeaking: 1
+  text: Thank you! Be safe.
   children:
-  - f526d36f-453e-418d-8ac5-4870dca498fa
-  - 206ff057-78bb-4df5-ac6a-3551321b3a4b
-  - e675a2b1-768e-43d4-89db-d9a2682055d5
-  - 0b8157c5-d9e4-4fa3-9602-a29a70c34b24
+  - 344f7217-1497-4f51-9ba2-34b7c7d6a373
   rect:
     serializedVersion: 2
-    x: 263
-    y: 107
+    x: 1704
+    y: 270
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8404916264353358462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 26177e5c-b8e3-4239-8cfb-fa529d09fa5f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: What was their problem?
+  children:
+  - 5b783784-cba2-404a-801e-2db72fcca7f2
+  rect:
+    serializedVersion: 2
+    x: 271
+    y: 216
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8423330749671169480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 5b783784-cba2-404a-801e-2db72fcca7f2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Blackwater has been taken over by the Dark Dragon cult.
+  children:
+  - 8937dc5c-cb45-405c-9d40-f39c71be178f
+  rect:
+    serializedVersion: 2
+    x: 706
+    y: 221
     width: 200
     height: 100
   onEnterAction: 

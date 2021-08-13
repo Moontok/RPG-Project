@@ -37,7 +37,7 @@ namespace RPG.UI.Inventories
 
         // PUBLIC
 
-        public void AddItems(InventoryItem item, int number)
+        public void AddItemsByDragging(InventoryItem item, int number)
         {
             store.AddAction(item, index, number);
         }

@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8799688693038056127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 375f54d8-2151-41d3-bfda-5f38119617eb
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Hey you! There is a strong group of enemies at the camp ahead.
+  children:
+  - 34439a17-b1ec-4b44-af18-6129a2dabcb7
+  - 13c5fc88-9975-46f2-8a1c-0d65c8f7d0c3
+  rect:
+    serializedVersion: 2
+    x: 296
+    y: 379
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-8035486006991238920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: a8da7304-6f5f-484d-884d-54ec36e56403
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Several warrior looking types and a couple of archers. Also, they seem to
+    have a nice looking sword sitting in their camp. You might want to grab it if
+    you manage to best them.
+  children:
+  - d708f3d2-55dc-4578-846d-5a742d352f69
+  rect:
+    serializedVersion: 2
+    x: 753
+    y: 528
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5733291065594758392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 34439a17-b1ec-4b44-af18-6129a2dabcb7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Thank you for the warning.
+  children:
+  - adedace4-430f-478c-9917-1f51a09897d1
+  rect:
+    serializedVersion: 2
+    x: 719
+    y: 229
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5554239692358672543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: 13c5fc88-9975-46f2-8a1c-0d65c8f7d0c3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Thanks! Any information you could provide about them?
+  children:
+  - a8da7304-6f5f-484d-884d-54ec36e56403
+  rect:
+    serializedVersion: 2
+    x: 540
+    y: 526
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3516646871192830759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: adedace4-430f-478c-9917-1f51a09897d1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Yur welcome!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1198
+    y: 436
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb48511ccbec3424ca706f93506cecc7, type: 3}
+  m_Name: Warning - Encounter 3 - Fine Sword
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -8799688693038056127}
+  - {fileID: -5733291065594758392}
+  - {fileID: -5554239692358672543}
+  - {fileID: -3516646871192830759}
+  - {fileID: -8035486006991238920}
+  - {fileID: 522250903554516692}
+--- !u!114 &522250903554516692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0916f5271a9c744ea31d99b58ef9598, type: 3}
+  m_Name: d708f3d2-55dc-4578-846d-5a742d352f69
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Noted!
+  children:
+  - adedace4-430f-478c-9917-1f51a09897d1
+  rect:
+    serializedVersion: 2
+    x: 968
+    y: 530
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

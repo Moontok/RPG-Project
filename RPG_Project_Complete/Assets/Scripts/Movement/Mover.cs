@@ -11,21 +11,28 @@ namespace RPG.Movement
     {
         [SerializeField] float maxSpeed = 6f;
         [SerializeField] float maxNavPathLength = 40f;
+        [SerializeField] bool isObject = false;
 
         NavMeshAgent navMeshAgent = null;
         Health health = null;
 
         private void Awake() 
         {
-            navMeshAgent = this.GetComponent<NavMeshAgent>();
-            health = this.GetComponent<Health>();
+            if (!isObject)
+            {
+                navMeshAgent = this.GetComponent<NavMeshAgent>();
+                health = this.GetComponent<Health>();
+            }
         }
 
         void Update()
         {
-            navMeshAgent.enabled = !health.IsDead();
+            if (!isObject)
+            {
+                navMeshAgent.enabled = !health.IsDead();
 
-            UpdateAnimator();
+                UpdateAnimator();
+            }
         }
 
         public void StartMoveAction(Vector3 destination, float speedFraction)

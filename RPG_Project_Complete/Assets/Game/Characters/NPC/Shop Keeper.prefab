@@ -27,7 +27,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopName: 
-  sellingPenaltyPercentage: 20
+  sellingPenaltyPercentage: 50
+  maximumBarterDiscount: 20
   stockConfig: []
 --- !u!1001 &61376713418423382
 PrefabInstance:

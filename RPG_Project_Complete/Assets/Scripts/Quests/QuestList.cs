@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
-using RPG.Core;
 using RPG.Inventories;
+using RPG.Utils;
 
 namespace RPG.Quests
 {

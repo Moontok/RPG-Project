@@ -13,25 +13,12 @@ MonoBehaviour:
   m_Name: Default Enemy Drops
   m_EditorClassIdentifier: 
   potentialDrops:
-  - item: {fileID: 11400000, guid: 85adbbb7cb7baca4e8262ffb82f03357, type: 2}
+  - item: {fileID: 11400000, guid: 801b698ddd7d10649bb330102a10e3ca, type: 2}
     relativeChance:
-    - 10
-    minNumber: 0100000002000000
-    maxNumber: 0500000005000000
-  - item: {fileID: 11400000, guid: b533ec52252c76d438e0fd909b38c987, type: 2}
-    relativeChance:
-    - 1
-    - 2
-    minNumber: 
-    maxNumber: 
-  - item: {fileID: 11400000, guid: 6c89fd4b4b7d8e542a7579e83d3f8666, type: 2}
-    relativeChance:
-    - 1
-    - 10
-    minNumber: 
-    maxNumber: 
+    - 100
+    minNumber: 0f000000
+    maxNumber: 19000000
   dropChancePercentage:
-  - 50
-  - 90
-  minDrops: 0300000006000000
-  maxDrops: 060000000c000000
+  - 100
+  minDrops: 01000000
+  maxDrops: 01000000
