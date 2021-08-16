@@ -14,6 +14,11 @@ namespace RPG.Dialogue
         [NonSerialized] Vector2 newNodeOffset = new Vector2(250, 0);
         [NonSerialized] Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
+        void Awake() 
+        {
+            OnValidate();
+        }
+
         private void OnValidate() 
         {
             nodeLookup.Clear();

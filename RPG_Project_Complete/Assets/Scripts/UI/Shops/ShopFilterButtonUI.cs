@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace RPG.UI.Shops
 {
-    public class FilterButtonUI : MonoBehaviour
+    public class ShopFilterButtonUI : MonoBehaviour
     {
         [SerializeField] ItemCategory category = ItemCategory.None;
 

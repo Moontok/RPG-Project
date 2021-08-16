@@ -24,8 +24,11 @@ namespace RPG.UI.Quests
             
             foreach (QuestStatus status in questList.GetStatuses())
             {
-                QuestItemUI uiInstance = Instantiate<QuestItemUI>(questPrefab, this.transform);
-                uiInstance.Setup(status);
+                if (!status.IsComplete())
+                {
+                    QuestItemUI uiInstance = Instantiate<QuestItemUI>(questPrefab, this.transform);
+                    uiInstance.Setup(status);
+                }
             }
         }
     }

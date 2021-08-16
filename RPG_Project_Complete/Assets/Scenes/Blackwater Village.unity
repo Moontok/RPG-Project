@@ -1020,7 +1020,7 @@ MonoBehaviour:
   - {fileID: 541244636}
   - {fileID: 1322683806}
   - {fileID: 1955308739}
-  activateOnStart: 0
+  activateOnStart: 1
 --- !u!1001 &62154955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2856,7 +2856,7 @@ MonoBehaviour:
   - {fileID: 859814773}
   - {fileID: 1275968969}
   - {fileID: 1970889488}
-  activateOnStart: 0
+  activateOnStart: 1
 --- !u!1 &195139427
 GameObject:
   m_ObjectHideFlags: 0
@@ -7771,7 +7771,7 @@ MonoBehaviour:
   fighters:
   - {fileID: 283516137}
   - {fileID: 1835478849}
-  activateOnStart: 0
+  activateOnStart: 1
 --- !u!4 &566789814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 430758, guid: 358badc9ddd35ff49b8070c96eb8feab,
@@ -28541,7 +28541,7 @@ PrefabInstance:
     - target: {fileID: 4215598670598143183, guid: 4dbc8801e237a1f4d88b16f4808df7da,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -570.74994
+      value: -570.75006
       objectReference: {fileID: 0}
     - target: {fileID: 4215684923950617743, guid: 4dbc8801e237a1f4d88b16f4808df7da,
         type: 3}

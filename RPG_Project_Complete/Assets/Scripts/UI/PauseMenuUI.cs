@@ -22,7 +22,7 @@ namespace PRG.UI
 
         void OnDisable() 
         {
-            // Change back to 1
+            // Change back to 1 or 5 for testing
             Time.timeScale = 5;
             playerController.enabled = true;
         }

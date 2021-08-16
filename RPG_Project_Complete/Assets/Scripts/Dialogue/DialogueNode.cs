@@ -88,6 +88,6 @@ namespace RPG.Dialogue
             children.Remove(childID);
             EditorUtility.SetDirty(this);
         }
-    }
 #endif
+    }
 }

@@ -43,7 +43,7 @@ namespace RPG.UI.Shops
             currentShop = shopper.GetActiveShop();
             gameObject.SetActive(currentShop != null);
 
-            foreach (FilterButtonUI button in GetComponentsInChildren<FilterButtonUI>())
+            foreach (ShopFilterButtonUI button in GetComponentsInChildren<ShopFilterButtonUI>())
             {
                 button.SetShop(currentShop);
             }
@@ -85,7 +85,7 @@ namespace RPG.UI.Shops
                 confirmText.text = "Sell";
             }
 
-            foreach (FilterButtonUI button in GetComponentsInChildren<FilterButtonUI>())
+            foreach (ShopFilterButtonUI button in GetComponentsInChildren<ShopFilterButtonUI>())
             {
                 button.RefreshUI();
             }

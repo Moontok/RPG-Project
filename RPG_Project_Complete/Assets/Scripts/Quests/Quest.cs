@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using RPG.Inventories;
+using RPG.Utils;
 using UnityEngine;
 
 namespace RPG.Quests
@@ -23,6 +24,8 @@ namespace RPG.Quests
         {
             public string reference = "";
             public string description = "";
+            public bool usesCondition = false;
+            public Condition completionCondition = null;
         }
 
         public string GetTitle()

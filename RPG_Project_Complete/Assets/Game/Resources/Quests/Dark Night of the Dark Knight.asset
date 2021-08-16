@@ -15,10 +15,30 @@ MonoBehaviour:
   objectives:
   - reference: train
     description: Train Up
+    usesCondition: 1
+    completionCondition:
+      and:
+      - or:
+        - predicate: MinimumTrait
+          parameters:
+          - Strength
+          - 3
+          negate: 0
   - reference: equip
     description: Get Equipped
+    usesCondition: 1
+    completionCondition:
+      and:
+      - or:
+        - predicate: HasItemEquipped
+          parameters:
+          - 06148f59-bf91-4796-b3bb-a5a91dac888f
+          negate: 0
   - reference: kill
     description: Kill the Dark Cult Knight
+    usesCondition: 0
+    completionCondition:
+      and: []
   rewards:
   - number: 1000
     item: {fileID: 11400000, guid: 801b698ddd7d10649bb330102a10e3ca, type: 2}
